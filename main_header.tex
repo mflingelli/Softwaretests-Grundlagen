@@ -1,0 +1,76 @@
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{listings}
+\usepackage{longtable}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.8}
+\usepackage{mathtools}
+\usepackage{tikz}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{mathptmx}
+\def\permille{\ensuremath{{}^\text{o}\mkern-5mu/\mkern-3mu_\text{oo}}}
+\usepackage{ifthen}
+\usetikzlibrary{mindmap,trees,shapes}
+\usetheme[
+  outer/progressbar=foot,
+  outer/numbering=none
+]{metropolis}
+
+\newcommand{\Vortragstitel}{Softwaretests}
+\newcommand{\Vortragsuntertitel}{Grundlagen}
+\newcommand{\CopyrightHinweis}{\textcopyright\ Markus Flingelli, 2020}
+
+\title{\Vortragstitel}
+\subtitle{\Vortragsuntertitel}
+\author{Dipl.-Inform. (univ.) Markus Flingelli}
+
+\only<article>{
+  \publishers{\CopyrightHinweis}
+}
+
+\def\datengerman{\def\today{\ifnum\day<10 0\fi\number\day.\ifnum\month<10 0\fi\number\month.\number\year}}
+\date{\today}
+
+\hypersetup{colorlinks=true, linkcolor=black, urlcolor=blue}
+
+\only<article>{
+  \hypersetup{
+  pdftitle = {\Vortragstitel},
+  pdfsubject = {\Vortragsuntertitel},
+  pdfkeywords = {\Vortragstite, \Vortragsuntertitel},
+  pdfauthor = {\CopyrightHinweis},
+  pdfcreator = {\LaTeX\ u.a. mit dem Paket \flqq hyperref\frqq},
+  pdfproducer = {pdfeTeX-0.\the\pdftexversion\pdftexrevision},
+  }
+}
+
+\setbeamercolor{frametitle}{bg=Titelfarbe}
+\newcommand{\befehl}[1]{\ttfamily #1\sf}
+
+\DeclareMathOperator{\e}{e}
+\newcommand{\iu}{{\mathrm{i}\mkern1mu}}
+
+\newboolean{publicEdition}
+\setboolean{publicEdition}{true}
+
+
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>
+    \frametitle{Gliederung}
+    \tableofcontents[sections={\thesection}]
+  \end{frame}
+  \begin{frame}<handout>
+    \frametitle{Gliederung}
+    \tableofcontents[sections={\thesection}]
+  \end{frame}
+}
+
+\renewenvironment{quotation}
+{\small\list{}{\rightmargin=0cm \leftmargin=0cm}
+   \item\relax}
+{\endlist}

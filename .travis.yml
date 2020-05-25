@@ -1,0 +1,32 @@
+sudo: required
+language: ruby
+dist: xenial
+before_install:
+- sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6B05F25D762E3157
+- sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended
+  texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended texlive-lang-german
+  latex-beamer git
+- git clone https://github.com/matze/mtheme.git
+- cd mtheme
+- make sty
+- cp *.sty ../
+- cd ../
+script:
+- pdflatex Softwaretests.tex
+- pdflatex Softwaretests.tex
+deploy:
+  provider: releases
+  api_key:
+    secure: AgfZ2Gbfy1/5g0xyZHNH3oyFsMvUgi7KLaX29x+05CnfipewVSkRz/Cu+LfgObm9mC3aO6QYVQM+nL193lxODxgL2zBZJfc2/WJRrd7Y03r9YRFRhgUi3+yBtxiGiE29EnqixmldseCZNyiOigrMSpUkOgBbVrzSJv2HeWgsI3l6zeBMIzlZoMi7ro9jMKrhaF/QvF25sH0L7cCTQpFLPpZAwdN+1+ebhWo8L/IUVxzsalWCKUc6JEAWczEDeCVBgRNng+dl+CWSBKtr3mw8JPcmTV0dwMCuqSbtIfu9dcQqGIF5of9DcuyTOoscIFjnt1UM9qQaLqwNe1RfrumacTddM8B5ns0poVdopS/EXb79dSgUUmATrWXKUdG6ltlq2hHezWdY0Uwi3NXV2kpXqlRU2PnmoZxlvThJA2S12IUVFjB4aIATC+oajWzIlBcrA2QdeG33pt/1B8rM5gPLFwxdfFWrog2bpRRKJSXXE8vlQ2E/iHgyfnK1vo45VuRkK7LVVm5jIWXmualIG+xVmWggFR6Cuav3O3BBrDrz1OA2nTz0bZVL59J5ps9Ci3J6xvbnQ9/42XZIhp4Ml7q42GJZVJyCH79JBETAkc6wB/4/qs597vV7aSVLXcJT+DO5EXBnpKINYEJdHUaRfgdBLcPlkyh9bie3z6rRmGbK+Bg=
+  file: 
+    - Softwaretests.pdf
+  skip_cleanup: true
+  draft: false
+  overwrite: true
+  on:
+    tags: true
+    repo: mflingelli/Softwaretests-Grundlagen
+    branch: master
+env:
+  global:
+    secure: BXzD8dy8olNp4VJYiMmEnvSfLqYDN5g/nu9jJWRycSp64Z2OPh7x/eZuV4Hg+0e09Mt0Xsj4SkSnd0qsNlxOUhgHw4DXPVwhakgPP/G/CqbqPZVGbEBSVTpchadXPhS3XEY3W4L7qASI4mfC27yGD6kEHSn1mC4nvKrotj/bMJdPs+Sx7jYnZ6Rjic4+4OHcgG2y/WfHfIBj5tnyc1Hlakce3nMhIEQXeSHzOcNtzZe80l4mKJGT9qOpYJW6NcHMVmBBOavBYJOgQInC70X4bOx9q21kCXOoQrLEtXEWaF7GjWHNxeW0N2gBJVn44u0025Z8pyolsvKi4aVYgncQbgp1djM9MUHTeXxA7CTmu136Nahd/VJtGWjZ4FDsrOKY8orXyb57yLVdJeuHbNBxWWBW/f710x9yOBhegcLzpAkQJsdl81bjIIe/KcbWniIbmEJ3VeKh4GqnHoaivVnFnsTeXEjtT0pvwnqdBpH3shhjlG/s5DI2l7vRWZz4A0r0aZip/xG6Qjd9t+vk8WYgG4/vy4oiAIdJNio0mjx14Mmb/6a3zK4JDe41LvLkccoeN2bWHxTaEE7mcyEHfp5mi9is5n/+MAnVD1nrmzPJ+puiNBuXphIkszEdW7VEllSfB/QFnkBwbzdJOPAQf+eDjSHc/Cl98V48j1Ojm9l/3u0=

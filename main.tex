@@ -1,0 +1,367 @@
+\begin{document}
+
+\only<article>{
+  \thispagestyle{empty}
+  \pagecolor{white}\afterpage{\nopagecolor}
+  \maketitle
+}
+
+\begin{frame}[plain]
+ \titlepage
+\end{frame}
+
+\frame{
+\only<presentation>{
+  \frametitle{Inhaltsverzeichnis}
+}
+\tableofcontents[hideallsubsections]
+}
+
+\section{Software-Qualit\"at}
+
+\frame{
+\frametitle{Software-Qualität}
+\begin{block}{Definiton nach ISO 25010}
+\begin{quotation}
+\glqq Der Grad, zu dem eine Komponente oder ein System die expliziten und impliziten Bedürfnisse seiner verschiedenen Stackholder erfüllt.\grqq
+\end{quotation}
+\end{block}
+}
+
+\frame{
+\frametitle{Hauptqualitätsmerkmale von Software}
+\begin{center}
+\begin{tikzpicture}[scale=.65,transform shape]
+  \tikzstyle{level 1 concept}+=[font=\sf, sibling angle=45]
+  \path[mindmap,concept color=LightOrange,text=black,every node/.style={concept}]
+  node[concept] {Qualität nach ISO 25010} [clockwise from=0]
+      child { node[concept] (Functionality) {Funktionali\-tät} }
+      child { node[concept] (Reliability) {Zuverlässig\-keit} }
+      child { node[concept] (Usability) {Gebrauchs\-tauglich\-keit} }
+      child { node[concept] (Security) {IT-Sicherheit} }
+      child { node[concept] (Maintainability) {Wartbarkeit} }
+      child { node[concept] (Efficiency) {Effizienz} }
+      child { node[concept] (Portability) {Portabilität} }
+      child { node[concept] (Compatibility) {Kompatibili\-tät} };
+\end{tikzpicture}
+\end{center}
+}
+
+\section{Testen}
+
+\frame{
+\frametitle{Testen}
+\begin{block}{Definiton}
+\begin{itemize}
+  \item Prozess, der sämtliche Testaktivitäten umfasst, welche dem Ziel dienen
+  \begin{itemize}
+    \item Nachweis der vollständigen Umsetzung der Anforderungen
+    \item Nachweis, dass System seinen Zweck erfüllt
+	\item Erreichen der festgelegten Qualitätsanforderungen
+	\item Aufdecken von etwaigen Fehlerzuständen
+  \end{itemize}
+\end{itemize}
+\end{block}
+}
+
+\frame{
+\frametitle{Testen}
+\setbeamercolor{postit}{fg=black,bg=quoteColor}
+\begin{beamercolorbox}[sep=1em,wd=.9\textwidth]{postit}
+  {\large \grqq Program testing can be a very effective way to show the presence of bugs, but is hopelessly inadequate for showing their absence.\grqq}
+  \vskip5mm
+  \hspace*\fill{\tiny --- Edsger Wybe Dijkstra, The Humble Programmer, ACM Turing Lecture 1972}
+\end{beamercolorbox}
+}
+
+\subsection{Testprozess}
+
+\frame{
+\frametitle{Fundamentaler Testprozess nach ISTQB}
+\begin{center}
+\begin{tikzpicture}
+\node (Beginn)       at (0,3)  [fill=LightOrange,minimum height=0.75em,text width=1cm,ellipse, text centered] {Beginn};
+\node (Planung)      at (0,2)  [rectangle, fill=LightOrange,   text width=6cm, minimum height=1em, text centered, rounded corners=8pt] {Planung und Steuerung};
+\node (Analyse)      at (0,1)  [rectangle, fill=LightOrange,   text width=6cm, minimum height=1em, text centered, rounded corners=8pt] {Analyse und Design};
+\node (Realisierung) at (0,0)  [rectangle, fill=LightOrange,   text width=6cm, minimum height=1em, text centered, rounded corners=8pt] {Realisierung und Durchf\"uhrung};
+\node (Auswertung)   at (0,-1) [rectangle, fill=LightOrange,   text width=6cm, minimum height=1em, text centered, rounded corners=8pt] {Auswertung und Bericht};
+\node (Abschluss)    at (0,-2) [rectangle, fill=LightOrange,   text width=6cm, minimum height=1em, text centered, rounded corners=8pt] {Abschluss};
+\node (Ende)         at (0,-3) [fill=LightOrange,minimum height=0.75em,text width=1cm,ellipse, text centered] {Ende};
+\draw[->, very thick](Beginn) to node[right]{} (Planung);
+\draw[->, very thick](Planung) to node[right]{} (Analyse);
+\draw[->, very thick](Analyse) to node[right]{} (Realisierung);
+\draw[->, very thick](Realisierung) to node[right]{} (Auswertung);
+\draw[->, very thick](Auswertung) to node[right]{} (Abschluss);
+\draw[->, very thick](Abschluss) to node[right]{} (Ende);
+\draw[<-, very thick](Analyse) to[bend left=90] node[right]{} (Auswertung);
+\draw[<-, very thick](Realisierung) to[bend left=90] node[right]{} (Auswertung);
+\draw[->, very thick](Abschluss) to[bend left=90] node[right]{} (Planung);
+\draw[->, very thick](Abschluss) to[bend left=90] node[right]{} (Analyse);
+\end{tikzpicture}
+\end{center}
+}
+
+\subsection{Prinzipien}
+\frame{
+\frametitle{Allgemeine Prinzipien des Softwaretestens}
+\begin{itemize}
+	\item Testen zeigt Anwesenheit von Fehlern
+	\item Vollständiges Testen ist nicht möglich
+	\item Mit dem Testen frühzeitig beginnen
+	\item Häufung von Fehlern
+	\item Zunehmende Testresistenz
+	\item Testen ist abhängig vom Umfeld
+	\item Trugschluss: Keine Fehler bedeuten ein brauchbares System
+\end{itemize}
+}
+
+\subsection{Fehler}
+
+\frame{
+\frametitle{Fehler}
+\begin{center}
+\begin{tikzpicture}
+\node (Fehlhandlung) at (0,0)  [rectangle, fill=LightOrange,   text width=6cm, minimum height=1em, text centered, rounded corners=8pt] {Fehlhandlung (error)};
+\node (Fehlerzustand) at (0,-1.5)  [rectangle, fill=LightOrange,   text width=6cm, minimum height=1em, text centered, rounded corners=8pt] {Fehlerzustand (bug, defect)};
+\node (Fehlerwirkung) at (0,-3)  [rectangle, fill=LightOrange,   text width=6cm, minimum height=1em, text centered, rounded corners=8pt] {Fehlerwirkung (failure)};
+\node (Schaden) at (0,-4.5)  [rectangle, fill=LightOrange,   text width=6cm, minimum height=1em, text centered, rounded corners=8pt] {Schaden};
+\draw[->, very thick](Fehlhandlung) to node{} (Fehlerzustand);
+\draw[->, very thick](Fehlerzustand) to node{} (Fehlerwirkung);
+\draw[->, very thick](Fehlerwirkung) to node{} (Schaden);
+\end{tikzpicture}
+\end{center}
+}
+
+\subsection{Debugging}
+\frame{
+\frametitle{Debugging}
+\begin{block}{Definiton}
+\begin{itemize}
+	\item Prozess der Aufdeckung, Analyse und Entfernung der Ursache von Fehlerwirkungen in einer Komponente oder einem Fehler
+	\item Debugging erfolgt in der Regel durch den Entwickler
+\end{itemize}
+\end{block}
+}
+
+\section{Dynamische Testverfahren}
+\subsection{Black-Box-Testverfahren}
+\frame{
+\frametitle{Black-Box-Testverfahren}
+\begin{block}{Definiton}
+\begin{itemize}
+	\item Testverfahren, das auf einer Analyse der Spezifikation einer Komponente oder eines System basiert.
+\end{itemize}
+\end{block}
+}
+
+\frame{
+\frametitle{Black-Box-Testverfahren}
+\begin{itemize}
+	\item Äquivalenzklassenbildung
+	\item Grenzwertanalyse
+	\item Entscheidungstabellen
+	\item Zustandsbasierte Verfahren
+	\item Anwendungsfallbasierte Verfahren
+\end{itemize}
+}
+
+\frame{
+\frametitle{Äquivalenzklasse}
+\begin{block}{Definiton}
+Teil des Wertebereichs von Ein- oder Ausgaben, in dem ein gleichartiges Verhalten der Komponente oder des Systems angenommen wird, basierend auf der zugrunde liegenden Spezifikation
+\end{block}
+}
+
+\frame{
+\frametitle{Grenzwertanalyse}
+\begin{block}{Definiton}
+\begin{itemize}
+  \item Stellt sicher, dass Fehler in kritischen Grenzbereichen der Äquivalenzklassen gefunden werden
+\end{itemize}
+\end{block}
+}
+
+\frame{
+\frametitle{Entscheidungstabellen}
+\begin{block}{Definiton}
+\begin{itemize}
+  \item Entscheidungstabellen werden eingesetzt, um komplexe Abhängigkeiten zwischen mehreren Bedingungen und den jeweils auszuführenden Aktionen übersichtlich, vollständig und widerspruchsfrei darzustellen.
+\end{itemize}
+\end{block}
+}
+
+\frame{
+\frametitle{Zustandsbasierte Verfahren}
+\begin{block}{Definiton}
+\begin{itemize}
+  \item Testverfahren, bei der Tests aus einer in Form eines Zustandsautomaten vorliegenden Spezifikation abgeleitet werden.
+\end{itemize}
+\end{block}
+}
+
+\frame{
+\frametitle{Anwendungsfallbasierte Verfahren}
+\begin{block}{Definiton}
+\begin{itemize}
+  \item Testverfahren, bei dem Testfälle im Hinblick auf die Ausführung verschiedener Verhalten eines Anwendungfalls entworfen werden.
+\end{itemize}
+\end{block}
+}
+
+\subsection{White-Box-Testverfahren}
+\frame{
+\frametitle{White-Box-Testverfahren}
+\begin{block}{Definiton}
+\begin{itemize}
+	\item Testverfahren, das nur auf der inneren Struktur einer Komponente oder eines Systems basiert.
+\end{itemize}
+\end{block}
+}
+
+\frame{
+\frametitle{White-Box-Testverfahren}
+\begin{itemize}
+	\item Anwesungsüberdeckung
+	\item Entscheidungsüberdeckung
+	\item Pfadüberdeckung
+	\item Einfache und mehrfache Bedingungsüberdeckung
+\end{itemize}
+}
+
+\frame{
+\frametitle{Anwesungsüberdeckung}
+\begin{block}{Definiton}
+\begin{itemize}
+  \item Jede Anweisung wird mindestens einmal getestet
+  \item Deckt nicht erreichbare Anweisungen (dead code) im Quelltext auf
+  \item Bei Verzweigungen (z.B. Schleifen, Bedigungen) werden Datenabhängigkeiten nicht beachtet
+\end{itemize}
+\end{block}
+}
+
+\frame{
+\frametitle{Entscheidungsüberdeckung}
+\begin{block}{Definiton}
+\begin{itemize}
+  \item Durchläuft alle Zweige des Quellcodes
+  \item 100 \% Entscheidungsüberdeckung schließt 100 \% der Anweisungen ein
+\end{itemize}
+\end{block}
+}
+
+\frame{
+\frametitle{Pfadüberdeckung}
+\begin{block}{Definiton}
+\begin{itemize}
+  \item Beim Pfadüberdeckungstest werden im Kontrollflussgraphen die möglichen Pfade vom Startknoten bis zum Endknoten betrachtet. 
+\end{itemize}
+\end{block}
+}
+
+\frame{
+\frametitle{Einfache und mehrfache Bedingungsüberdeckung}
+\begin{block}{Definiton}
+\begin{itemize}
+  \item \textbf{Einfache Bedingungsüberdeckung}:\newline Jede atomare Bedingung einer Entscheidung muss einmal mit true und einmal mit false getestet werden.
+  \item \textbf{Mehrfache Bedingungsüberdeckung}:\newline Dieser Test betrachtet alle atomaren Bedingungen einer Bedingung. Wenn $n$ atomare Bedingungen in der Bedingung stehen, dann werden $2^n$ Kombinationen gebildet. 
+\end{itemize}
+\end{block}
+}
+
+\subsection{Vergleich Black- und White-Box-Testverfahren}
+\frame{
+\frametitle{Vergleich Black- und White-Box-Testverfahre}
+\begin{itemize}
+  \item Vorteile von Black-Box-Tests gegenüber White-Box-Tests 
+  \begin{itemize}
+    \item bessere Verifikation des Gesamtsystems
+	\item Testen von bedeutungsmäßigen Eigenschaften bei geeigneter Spezifikation
+	\item Portabilität von systematisch erstellten Testsequenzen auf plattformunabhängige Implementierungen
+  \end{itemize}
+  \item Nachteile von Black-Box-Tests gegenüber White-Box-Tests
+  \begin{itemize}
+    \item größerer organisatorischer Aufwand
+	\item zusätzlich eingefügte Funktionen bei der Implementierung werden nur durch Zufall getestet
+	\item Testsequenzen einer unzureichenden Spezifikation sind unbrauchbar
+  \end{itemize}
+\end{itemize}
+}
+
+\section{Teststufen}
+
+\frame{
+\frametitle{Teststufen}
+\begin{block}{Teststufen}
+\begin{itemize}
+	\item Komponententest
+	\item Integrationstest
+	\item Systemtest
+	\item Abnahmetest
+\end{itemize}
+\end{block}
+}
+
+\frame{
+\frametitle{Komponententest}
+\begin{block}{Definiton}
+\begin{itemize}
+  \item Testet einzele Software- oder Hardware-Komponente mit dem Ziel 
+  \begin{itemize}
+    \item Fehler aufzudecken und
+	\item vollständige Umsetzung der funktionalen Anforderungen an die Komponente nachzuweisen
+  \end{itemize}
+  \item Komponententests von Software-Komponenten werden in der Regel vom Entwickler erstellt
+\end{itemize}
+\end{block}
+}
+
+\frame{
+\frametitle{Integrationstest}
+\begin{block}{Definiton}
+\begin{itemize}
+  \item Prüft das korrekte funktionale und technische Zusammenspiel zwischen Komponten oder Systemen
+  \item Soll Fehlerwirkungen in den Schnittstellen und Kommunikation zwischen den Komponenten aufdecken
+\end{itemize}
+\end{block}
+}
+
+\frame{
+\frametitle{Systemtest}
+\begin{block}{Definiton}
+\begin{itemize}
+  \item Teststufe mit dem Schwerpunkt zu verifizieren, dass ein System als Ganzes die spezifizierten Anforderungen erfüllt
+\end{itemize}
+\end{block}
+}
+
+\frame{
+\frametitle{Systemtest}
+\begin{block}{Definiton}
+\begin{itemize}
+  \item Teststufe mit dem Schwerpunkt zu verifizieren, dass ein System als Ganzes die spezifizierten Anforderungen erfüllt
+  \item Wird in der Regel von Testern ausgeführt
+\end{itemize}
+\end{block}
+}
+
+\frame{
+\frametitle{Abnahmetest}
+\begin{block}{Definiton}
+\begin{itemize}
+  \item Teststufe mit dem Schwerpunkt zu bestimmen, ob ein System abgenommen werden kann
+  \item Abnahmetest erfolgt mit dem Auftraggeber
+\end{itemize}
+\end{block}
+}
+
+\section{Literaturverzeichnis}
+
+
+\frame{
+\frametitle{Literaturverzeichnis}
+\begin{thebibliography}{10}
+  \bibitem{GTB} German Testing Board: \emph{Standard Glossary of Terms used in Software Testing}. Version 3.3,  \href{https://www.german-testing-board.info/wp-content/uploads/2020/05/CTFL_CORE_SAMPLE_EXAM_2018A_germ_mL_mB_FINAL.pdf}{\url{https://www.german-testing-board.info/wp-content/uploads/2020/05/CTFL_CORE_SAMPLE_EXAM_2018A_germ_mL_mB_FINAL.pdf}}, 25. Februar 2020
+\end{thebibliography} 
+}
+
+\end{document}

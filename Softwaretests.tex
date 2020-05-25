@@ -1,0 +1,14 @@
+\documentclass{beamer}
+\input{colors.tex}
+\usepackage{etoolbox}
+\input{main_header.tex}
+\makeatletter
+\setlength{\metropolis@titleseparator@linewidth}{2pt}
+\setlength{\metropolis@progressonsectionpage@linewidth}{2pt}
+\setlength{\metropolis@progressinheadfoot@linewidth}{2pt}
+\patchcmd{\beamer@sectionintoc}{\vskip1.5em}{\vskip0.5em}{}{}
+\makeatother
+
+\setbeamercolor{progress bar in head/foot}{fg=Titelfarbe}
+\setbeamercolor{title separator}{fg=Titelfarbe}
+\input{main.tex}
