@@ -157,11 +157,11 @@
 \frame{
 \frametitle{Black-Box-Testverfahren}
 \begin{itemize}
-	\item Äquivalenzklassenbildung
-	\item Grenzwertanalyse
-	\item Entscheidungstabellen
-	\item Zustandsbasierte Verfahren
-	\item Anwendungsfallbasierte Verfahren
+  \item Äquivalenzklassenbildung
+  \item Grenzwertanalyse
+  \item Entscheidungstabellen
+  \item Zustandsbasierte Verfahren
+  \item Anwendungsfallbasierte Verfahren
 \end{itemize}
 }
 
@@ -173,11 +173,97 @@ Teil des Wertebereichs von Ein- oder Ausgaben, in dem ein gleichartiges Verhalte
 }
 
 \frame{
+\frametitle{Beispiel: Äquivalenzklasse}
+\begin{block}{Anforderungen}
+\begin{itemize}
+  \item Überschreitet ein Verkehrsteilnehmer die Geschwindigkeit ($v$) um mehr als 3 km/h bis einschließlich 10 km/h, beträgt die Strafe 20 Euro.
+  \item Überschreitet ein Verkehrsteilnehmer die Geschwindigkeit ($v$) um mehr als 10 km/h bis einschließlich 20 km/h, beträgt die Strafe 50 Euro.
+  \item Überschreitet ein Verkehrsteilnehmer die Geschwindigkeit ($v$) um mehr als 20 km/h beträgt, die Strafe 100 Euro.
+  \item Die Geschwindkeitsüberschreitung wird als ganze Zahl angegeben.
+\end{itemize}
+\end{block}
+}
+
+\frame{
+\frametitle{Beispiel: Äquivalenzklasse}
+\begin{block}{Äquivalenzklassenbildung}
+\begin{itemize}
+  \item 3 gültige Äquivalenzklassen
+  \begin{itemize}
+    \item Zulässige Vertreter der drei Äquivalenzklassen, z.B. 6, 13 und 41.
+  \end{itemize}
+  \item 1 ungültige Äquivalenzklasse
+  \begin{itemize}
+    \item Zulässiger Vertreter der beiden Äquivalenzklassen, z.B. 2.
+  \end{itemize}
+\end{itemize}
+\begin{center}
+\begin{tikzpicture}
+\node at (.95, .45) [color=red]{3};
+\draw[-|, very thick, color=red](-.5,0) -- (1,0);
+\node at (1.45, .45) {4};
+\node at (2.95, .45) {10};
+\draw[|-|, very thick](1.5,0) -- (3,0);
+\node at (3.48, .45) {11};
+\node at (4.98, .45) {20};
+\draw[|-|, very thick](3.5,0) -- (5,0);
+\draw[->, very thick, color=red](.25,-.5) -- (0.25,-.05);
+\node at (.25, -.75) [color=red]{$v \leq 3$};
+\draw[->, very thick](2.25,-1) -- (2.25,-.05);
+\node at (2.25, -1.25) {$4 \leq\ v \leq\ 10$};
+\draw[->, very thick](4.25,-1.75) -- (4.25,-.05);
+\node at (4.25, -2) {$11 \leq\ v \leq\ 20$};
+\node at (5.48, .45) {21};
+\draw[|-, very thick](5.5,0) -- (7,0);
+\draw[->, very thick](6.25,-2.25) -- (6.25,-.05);
+\node at (6.25, -2.5) {$ v \geq\ 21$};
+\end{tikzpicture}
+\end{center}
+\end{block}
+}
+
+\frame{
 \frametitle{Grenzwertanalyse}
 \begin{block}{Definiton}
 \begin{itemize}
-  \item Stellt sicher, dass Fehler in kritischen Grenzbereichen der Äquivalenzklassen gefunden werden
+  \item Stellt sicher, dass Fehler in kritischen Grenzbereichen der Äquivalenzklassen gefunden werden.
 \end{itemize}
+\end{block}
+}
+
+\frame{
+\frametitle{Beispiel: Grenzwertanalyse}
+\begin{block}{Grenzwertanalyse}
+\begin{itemize}
+  \item 3 km/h (ungültige Eingabe)
+  \item 4 km/h (gültige Eingabe)
+  \item 10 km/h (gültige Eingabe)
+  \item 11 km/h (gültige Eingabe)
+  \item 20 km/h (gültige Eingabe)
+  \item 21 km/h (gültige Eingabe)
+\end{itemize}
+\begin{center}
+\begin{tikzpicture}[scale=.85,transform shape]
+\node at (.95, .45) [color=red]{3};
+\draw[-|, very thick, color=red](-.5,0) -- (1,0);
+\node at (1.45, .45) {4};
+\node at (2.95, .45) {10};
+\draw[|-|, very thick](1.5,0) -- (3,0);
+\node at (3.48, .45) {11};
+\node at (4.98, .45) {20};
+\draw[|-|, very thick](3.5,0) -- (5,0);
+\draw[->, very thick, color=red](.25,-.5) -- (0.25,-.05);
+\node at (.25, -.75) [color=red]{$v \leq 3$};
+\draw[->, very thick](2.25,-1) -- (2.25,-.05);
+\node at (2.25, -1.25) {$4 \leq\ v \leq\ 10$};
+\draw[->, very thick](4.25,-1.75) -- (4.25,-.05);
+\node at (4.25, -2) {$11 \leq\ v \leq\ 20$};
+\node at (5.48, .45) {21};
+\draw[|-, very thick](5.5,0) -- (7,0);
+\draw[->, very thick](6.25,-2.25) -- (6.25,-.05);
+\node at (6.25, -2.5) {$ v \geq\ 21$};
+\end{tikzpicture}
+\end{center}
 \end{block}
 }
 
@@ -214,6 +300,7 @@ Teil des Wertebereichs von Ein- oder Ausgaben, in dem ein gleichartiges Verhalte
 \begin{block}{Definiton}
 \begin{itemize}
 	\item Testverfahren, das nur auf der inneren Struktur einer Komponente oder eines Systems basiert.
+	\item Grundlage des Tests ist der Programmcode.
 \end{itemize}
 \end{block}
 }
@@ -229,7 +316,7 @@ Teil des Wertebereichs von Ein- oder Ausgaben, in dem ein gleichartiges Verhalte
 }
 
 \frame{
-\frametitle{Anwesungsüberdeckung}
+\frametitle{Anweisungsüberdeckung}
 \begin{block}{Definiton}
 \begin{itemize}
   \item Jede Anweisung wird mindestens einmal getestet
@@ -238,6 +325,17 @@ Teil des Wertebereichs von Ein- oder Ausgaben, in dem ein gleichartiges Verhalte
 \end{itemize}
 \end{block}
 }
+
+\begin{frame}[fragile]
+\frametitle{Beispiel: Anweisungsüberdeckung}
+\begin{block}{}
+\input{calcSum.tex}
+Ein Testfall ist notwendig, um alle Anweisungen abzudecken
+\begin{itemize}
+  \item Testfall 1: $value = 3$
+\end{itemize}
+\end{block}
+\end{frame}
 
 \frame{
 \frametitle{Entscheidungsüberdeckung}
@@ -248,6 +346,18 @@ Teil des Wertebereichs von Ein- oder Ausgaben, in dem ein gleichartiges Verhalte
 \end{itemize}
 \end{block}
 }
+
+\begin{frame}[fragile]
+\frametitle{Beispiel: Entscheidungsüberdeckung}
+\begin{block}{}
+\input{calcSum.tex}
+Zwei Testfälle sind notwendig, um alle Entscheidungen abzudecken
+\begin{itemize}
+  \item Testfall 1: $value = 0$
+  \item Testfall 2: $value = 3$
+\end{itemize}
+\end{block}
+\end{frame}
 
 \frame{
 \frametitle{Pfadüberdeckung}
@@ -287,6 +397,47 @@ Teil des Wertebereichs von Ein- oder Ausgaben, in dem ein gleichartiges Verhalte
 \end{itemize}
 }
 
+\section{Statische Testverfahren}
+
+\frame{
+\frametitle{Statische Testverfahren}
+\begin{block}{Definiton}
+\begin{itemize}
+  \item Testverfahren, bei dem das Testobjekt untersucht wird, ohne ausgeführt zu werden.
+  \item Unterteilt in
+  \begin{itemize}
+    \item Reviews
+	\item Statische Analyse
+  \end{itemize}
+\end{itemize}
+\end{block}
+}
+
+\subsection{Reviews}
+\frame{
+\frametitle{Reviews}
+\begin{block}{}
+\begin{itemize}
+  \item Informelles Review
+  \item Technisches Review
+  \item Walkthrough
+  \item Inspektion
+\end{itemize}
+\end{block}
+}
+
+\subsection{Statische Analyse}
+\frame{
+\frametitle{Statische Analyse}
+\begin{block}{}
+\begin{itemize}
+  \item Compilation
+  \item Datenflussanalyse
+  \item Kontrollflussanalyse
+\end{itemize}
+\end{block}
+}
+
 \section{Teststufen}
 
 \frame{
@@ -305,7 +456,7 @@ Teil des Wertebereichs von Ein- oder Ausgaben, in dem ein gleichartiges Verhalte
 \frametitle{Komponententest}
 \begin{block}{Definiton}
 \begin{itemize}
-  \item Testet einzele Software- oder Hardware-Komponente mit dem Ziel 
+  \item Testet einzele Software- oder Hardware-Komponente mit den Zielen
   \begin{itemize}
     \item Fehler aufzudecken und
 	\item vollständige Umsetzung der funktionalen Anforderungen an die Komponente nachzuweisen
