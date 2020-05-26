@@ -21,7 +21,7 @@
 
 \frame{
 \frametitle{Software-Qualität}
-\begin{block}{Definiton nach ISO 25010}
+\begin{block}{Definition nach ISO 25010}
 \begin{quotation}
 \glqq Der Grad, zu dem eine Komponente oder ein System die expliziten und impliziten Bedürfnisse seiner verschiedenen Stackholder erfüllt.\grqq
 \end{quotation}
@@ -51,7 +51,7 @@
 
 \frame{
 \frametitle{Testen}
-\begin{block}{Definiton}
+\begin{block}{Definition}
 \begin{itemize}
   \item Prozess, der sämtliche Testaktivitäten umfasst, welche dem Ziel dienen
   \begin{itemize}
@@ -115,10 +115,10 @@
 \end{itemize}
 }
 
-\subsection{Fehler}
+\subsection{Fehlerbegriff}
 
 \frame{
-\frametitle{Fehler}
+\frametitle{Fehlerbegriff}
 \begin{center}
 \begin{tikzpicture}
 \node (Fehlhandlung) at (0,0)  [rectangle, fill=LightOrange,   text width=6cm, minimum height=1em, text centered, rounded corners=8pt] {Fehlhandlung (error)};
@@ -135,7 +135,7 @@
 \subsection{Debugging}
 \frame{
 \frametitle{Debugging}
-\begin{block}{Definiton}
+\begin{block}{Definition}
 \begin{itemize}
 	\item Prozess der Aufdeckung, Analyse und Entfernung der Ursache von Fehlerwirkungen in einer Komponente oder einem Fehler
 	\item Debugging erfolgt in der Regel durch den Entwickler
@@ -147,7 +147,7 @@
 \subsection{Black-Box-Testverfahren}
 \frame{
 \frametitle{Black-Box-Testverfahren}
-\begin{block}{Definiton}
+\begin{block}{Definition}
 \begin{itemize}
 	\item Testverfahren, das auf einer Analyse der Spezifikation einer Komponente oder eines System basiert.
 \end{itemize}
@@ -167,7 +167,7 @@
 
 \frame{
 \frametitle{Äquivalenzklasse}
-\begin{block}{Definiton}
+\begin{block}{Definition}
 Teil des Wertebereichs von Ein- oder Ausgaben, in dem ein gleichartiges Verhalten der Komponente oder des Systems angenommen wird, basierend auf der zugrunde liegenden Spezifikation
 \end{block}
 }
@@ -178,8 +178,8 @@ Teil des Wertebereichs von Ein- oder Ausgaben, in dem ein gleichartiges Verhalte
 \begin{itemize}
   \item Überschreitet ein Verkehrsteilnehmer die Geschwindigkeit ($v$) um mehr als 3 km/h bis einschließlich 10 km/h, beträgt die Strafe 20 Euro.
   \item Überschreitet ein Verkehrsteilnehmer die Geschwindigkeit ($v$) um mehr als 10 km/h bis einschließlich 20 km/h, beträgt die Strafe 50 Euro.
-  \item Überschreitet ein Verkehrsteilnehmer die Geschwindigkeit ($v$) um mehr als 20 km/h beträgt, die Strafe 100 Euro.
-  \item Die Geschwindkeitsüberschreitung wird als ganze Zahl angegeben.
+  \item Überschreitet ein Verkehrsteilnehmer die Geschwindigkeit ($v$) um mehr als 20 km/h, beträgt die Strafe 100 Euro.
+  \item Die Geschwindigkeitsüberschreitung wird als ganze Zahl angegeben.
 \end{itemize}
 \end{block}
 }
@@ -224,7 +224,7 @@ Teil des Wertebereichs von Ein- oder Ausgaben, in dem ein gleichartiges Verhalte
 
 \frame{
 \frametitle{Grenzwertanalyse}
-\begin{block}{Definiton}
+\begin{block}{Definition}
 \begin{itemize}
   \item Stellt sicher, dass Fehler in kritischen Grenzbereichen der Äquivalenzklassen gefunden werden.
 \end{itemize}
@@ -269,7 +269,7 @@ Teil des Wertebereichs von Ein- oder Ausgaben, in dem ein gleichartiges Verhalte
 
 \frame{
 \frametitle{Entscheidungstabellen}
-\begin{block}{Definiton}
+\begin{block}{Definition}
 \begin{itemize}
   \item Entscheidungstabellen werden eingesetzt, um komplexe Abhängigkeiten zwischen mehreren Bedingungen und den jeweils auszuführenden Aktionen übersichtlich, vollständig und widerspruchsfrei darzustellen.
 \end{itemize}
@@ -277,8 +277,24 @@ Teil des Wertebereichs von Ein- oder Ausgaben, in dem ein gleichartiges Verhalte
 }
 
 \frame{
+\frametitle{Beispiel: Entscheidungstabellen}
+\begin{block}{}
+Den Mitarbeitern einer Firma wird nur dann eine Prämie ausgeschüttet, wenn sie länger als ein Jahr im Unternehmen beschäftigt sind und ein Ziel erreichen, das vorher individuell vereinbart wurde.
+
+\begin{tabular}{|l|p{3cm}|l|l|l|l|l|}
+\hline
+Testfall-ID & & T1 & T2 & T3 & T4 & T5 \\\hline
+Bedingung1 & Beschäftigung $>$ 1 Jahr? & Ja   & Nein & Nein & Ja & Nein \\ \hline
+Bedingung2 & Ziel vereinbart?          & Nein & Nein & Ja   & Ja & Ja   \\ \hline 
+Bedingung3 & Ziel erreicht ?           & Nein & Nein & Ja   & Ja & Nein \\ \hline 
+Aktion & Auszahlung der Prämie         & Nein & Nein & Nein & Ja & Nein \\ \hline 
+\end{tabular}
+\end{block}
+}
+
+\frame{
 \frametitle{Zustandsbasierte Verfahren}
-\begin{block}{Definiton}
+\begin{block}{Definition}
 \begin{itemize}
   \item Testverfahren, bei der Tests aus einer in Form eines Zustandsautomaten vorliegenden Spezifikation abgeleitet werden.
 \end{itemize}
@@ -286,8 +302,44 @@ Teil des Wertebereichs von Ein- oder Ausgaben, in dem ein gleichartiges Verhalte
 }
 
 \frame{
+\frametitle{Beispiel: Zustandsbasierte Verfahren}
+\begin{center}
+\begin{tikzpicture}[scale=.95,transform shape]
+\node (S1) at (0,2) [rectangle, fill=LightOrange, text width=4cm, minimum height=1em, text centered, rounded corners=8pt] {TV Off (S1)};
+
+\node (S2) at (0,0) [rectangle, fill=LightOrange, text width=4cm, minimum height=1em, text centered, rounded corners=8pt] {TV Stand By (S2)};
+
+\node (S3) at (7.5,1) [rectangle, fill=LightOrange, text width=3cm, minimum height=3cm, text centered, rounded corners=8pt] {TV Play (S3)};
+
+\draw[->, very thick](5.75,2) -- (2.25, 2);
+\node at (4, 2.3) {Power Off};
+
+\draw[<-, very thick](5.75,.25) -- (2.25, .25);
+\node at (4, .5) {RC On};
+
+\draw[->, very thick](5.75, -.25) -- (2.25, -.25);
+\node at (4, -.55) {RC Off};
+
+\draw[->, very thick](.5, .4) -- (.5, 1.65);
+\node at (1.5, 1) {Power Off};
+
+\draw[<-, very thick](-.5, .4) -- (-.5, 1.65);
+\node at (-1.5, 1) {Power On};
+\end{tikzpicture}
+\vspace{\fill}
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+Testfall & 1 & 2 & 3 & 4 & 5\\ \hline
+Startzustand & S1 & S2 & S2 & S3 & S3\\ \hline
+Eingabe & Power On & Power Off & RC On & RC Off & Power Off\\ \hline
+Endzustand & S2 & S1 & S3 & S2 & S1\\ \hline
+\end{tabular}
+\end{center}
+}
+
+\frame{
 \frametitle{Anwendungsfallbasierte Verfahren}
-\begin{block}{Definiton}
+\begin{block}{Definition}
 \begin{itemize}
   \item Testverfahren, bei dem Testfälle im Hinblick auf die Ausführung verschiedener Verhalten eines Anwendungfalls entworfen werden.
 \end{itemize}
@@ -297,7 +349,7 @@ Teil des Wertebereichs von Ein- oder Ausgaben, in dem ein gleichartiges Verhalte
 \subsection{White-Box-Testverfahren}
 \frame{
 \frametitle{White-Box-Testverfahren}
-\begin{block}{Definiton}
+\begin{block}{Definition}
 \begin{itemize}
 	\item Testverfahren, das nur auf der inneren Struktur einer Komponente oder eines Systems basiert.
 	\item Grundlage des Tests ist der Programmcode.
@@ -308,7 +360,7 @@ Teil des Wertebereichs von Ein- oder Ausgaben, in dem ein gleichartiges Verhalte
 \frame{
 \frametitle{White-Box-Testverfahren}
 \begin{itemize}
-	\item Anwesungsüberdeckung
+	\item Anweisungsüberdeckung
 	\item Entscheidungsüberdeckung
 	\item Pfadüberdeckung
 	\item Einfache und mehrfache Bedingungsüberdeckung
@@ -317,11 +369,11 @@ Teil des Wertebereichs von Ein- oder Ausgaben, in dem ein gleichartiges Verhalte
 
 \frame{
 \frametitle{Anweisungsüberdeckung}
-\begin{block}{Definiton}
+\begin{block}{Definition}
 \begin{itemize}
   \item Jede Anweisung wird mindestens einmal getestet
   \item Deckt nicht erreichbare Anweisungen (dead code) im Quelltext auf
-  \item Bei Verzweigungen (z.B. Schleifen, Bedigungen) werden Datenabhängigkeiten nicht beachtet
+  \item Bei Verzweigungen (z.B. Schleifen, Bedingungen) werden Datenabhängigkeiten nicht beachtet
 \end{itemize}
 \end{block}
 }
@@ -339,7 +391,7 @@ Ein Testfall ist notwendig, um alle Anweisungen abzudecken
 
 \frame{
 \frametitle{Entscheidungsüberdeckung}
-\begin{block}{Definiton}
+\begin{block}{Definition}
 \begin{itemize}
   \item Durchläuft alle Zweige des Quellcodes
   \item 100 \% Entscheidungsüberdeckung schließt 100 \% der Anweisungen ein
@@ -361,7 +413,7 @@ Zwei Testfälle sind notwendig, um alle Entscheidungen abzudecken
 
 \frame{
 \frametitle{Pfadüberdeckung}
-\begin{block}{Definiton}
+\begin{block}{Definition}
 \begin{itemize}
   \item Beim Pfadüberdeckungstest werden im Kontrollflussgraphen die möglichen Pfade vom Startknoten bis zum Endknoten betrachtet. 
 \end{itemize}
@@ -370,7 +422,7 @@ Zwei Testfälle sind notwendig, um alle Entscheidungen abzudecken
 
 \frame{
 \frametitle{Einfache und mehrfache Bedingungsüberdeckung}
-\begin{block}{Definiton}
+\begin{block}{Definition}
 \begin{itemize}
   \item \textbf{Einfache Bedingungsüberdeckung}:\newline Jede atomare Bedingung einer Entscheidung muss einmal mit true und einmal mit false getestet werden.
   \item \textbf{Mehrfache Bedingungsüberdeckung}:\newline Dieser Test betrachtet alle atomaren Bedingungen einer Bedingung. Wenn $n$ atomare Bedingungen in der Bedingung stehen, dann werden $2^n$ Kombinationen gebildet. 
@@ -380,7 +432,7 @@ Zwei Testfälle sind notwendig, um alle Entscheidungen abzudecken
 
 \subsection{Vergleich Black- und White-Box-Testverfahren}
 \frame{
-\frametitle{Vergleich Black- und White-Box-Testverfahre}
+\frametitle{Vergleich Black- und White-Box-Testverfahrens}
 \begin{itemize}
   \item Vorteile von Black-Box-Tests gegenüber White-Box-Tests 
   \begin{itemize}
@@ -401,7 +453,7 @@ Zwei Testfälle sind notwendig, um alle Entscheidungen abzudecken
 
 \frame{
 \frametitle{Statische Testverfahren}
-\begin{block}{Definiton}
+\begin{block}{Definition}
 \begin{itemize}
   \item Testverfahren, bei dem das Testobjekt untersucht wird, ohne ausgeführt zu werden.
   \item Unterteilt in
@@ -454,9 +506,9 @@ Zwei Testfälle sind notwendig, um alle Entscheidungen abzudecken
 
 \frame{
 \frametitle{Komponententest}
-\begin{block}{Definiton}
+\begin{block}{Definition}
 \begin{itemize}
-  \item Testet einzele Software- oder Hardware-Komponente mit den Zielen
+  \item Testet einzelne Software- oder Hardware-Komponente mit den Zielen
   \begin{itemize}
     \item Fehler aufzudecken und
 	\item vollständige Umsetzung der funktionalen Anforderungen an die Komponente nachzuweisen
@@ -468,9 +520,9 @@ Zwei Testfälle sind notwendig, um alle Entscheidungen abzudecken
 
 \frame{
 \frametitle{Integrationstest}
-\begin{block}{Definiton}
+\begin{block}{Definition}
 \begin{itemize}
-  \item Prüft das korrekte funktionale und technische Zusammenspiel zwischen Komponten oder Systemen
+  \item Prüft das korrekte funktionale und technische Zusammenspiel zwischen Komponenten oder Systemen
   \item Soll Fehlerwirkungen in den Schnittstellen und Kommunikation zwischen den Komponenten aufdecken
 \end{itemize}
 \end{block}
@@ -478,7 +530,7 @@ Zwei Testfälle sind notwendig, um alle Entscheidungen abzudecken
 
 \frame{
 \frametitle{Systemtest}
-\begin{block}{Definiton}
+\begin{block}{Definition}
 \begin{itemize}
   \item Teststufe mit dem Schwerpunkt zu verifizieren, dass ein System als Ganzes die spezifizierten Anforderungen erfüllt
 \end{itemize}
@@ -487,7 +539,7 @@ Zwei Testfälle sind notwendig, um alle Entscheidungen abzudecken
 
 \frame{
 \frametitle{Systemtest}
-\begin{block}{Definiton}
+\begin{block}{Definition}
 \begin{itemize}
   \item Teststufe mit dem Schwerpunkt zu verifizieren, dass ein System als Ganzes die spezifizierten Anforderungen erfüllt
   \item Wird in der Regel von Testern ausgeführt
@@ -497,7 +549,7 @@ Zwei Testfälle sind notwendig, um alle Entscheidungen abzudecken
 
 \frame{
 \frametitle{Abnahmetest}
-\begin{block}{Definiton}
+\begin{block}{Definition}
 \begin{itemize}
   \item Teststufe mit dem Schwerpunkt zu bestimmen, ob ein System abgenommen werden kann
   \item Abnahmetest erfolgt mit dem Auftraggeber
