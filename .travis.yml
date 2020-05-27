@@ -11,6 +11,10 @@ before_install:
 - make sty
 - cp *.sty ../
 - cd ../
+- composer config --global github-oauth.github.com "$GITHUB_TOKEN"
+install:
+  - composer install --dev --prefer-distinstall:
+  - composer install --dev --prefer-dist
 script:
 - pdflatex Softwaretests.tex
 - pdflatex Softwaretests.tex
@@ -29,4 +33,4 @@ deploy:
     branch: master
 env:
   global:
-  - secure: ET4aafHyOGWvd1/MUqYQXLLhegelvmNx+a/eMgqLRjNlqh7ur7mv6BMeS0AMqbGGmJV4iGhoUKbWjek9du3vYhztKvFO4yhEI/7xNk0uvVB67PDfUE3nIl8NI7l4XElUv5EIgfSbivGxMTPHaxAW37vv1ktaYk11AJgGUj0HEFiv/sosjBDQdsuzaCUrpgYtfwzxUE98cefl2TgsLC2RSgLSYIr/bHlu5HTfnBtjtZfWbtGrAvj2S0xclUNNuD4h6UyVruNxU6efCzvujGczbdVltqGeQUlhysk8ThVEUZIBOukRme7aHviKAqd8fAP0fjB76lR/g65qlKdlftYN393Bvqf+y13/woSL1CmTjQlSgAQd6d2Du1AIYPp9BXhv0VYMA5pLjkBkseM+wbnqf59sYjxtvBIrIQqlHVmbD+vpAkZz0MdRHrYYImJ3gd1IEf0BEGC3TmSxEanYa28GXocamaEQ3R7dqAnZ4gJVpWaliHu2SJKNWixfefknhCajd8iNCLsQyhywzQVKAcrDh6t8m64SpwbK/mIq11DnePglGqpFVVOZKQpdmIltEAoeYuw0HEdcZqPAkX0xeQfXVeNaOvAIYJ5FYUPpkJtRnB2BNIWfKZy6gQ63/JPCHheNrB2qxtDCiTayuseySD3Lu7KZ/SmEt6Knlva8J2bnK4g=
+  - secure: kfgUl21gbit8HVKSQTz6duE+Fm1UTLiykyXeZIGpAPt2bs8rhHcQFKUK3tfU2YlE85M2sPJpm3/wweJ7qoJnYfCtHaxlx3ZNXkLJkOyT7y3Tq4NuvmS5tPCKcCL92K3oiSn/NnVl8b+a528+4uNCh6rDM8E9SvwOQUjuQg3mO3mOCIkL2/Ien0AQajaTE5yIm6pbChOFF2apPIvmeb0TzfIq5nFU871iAvozUXI7Tzb7b6Q9+b9VB88um/fUFX3v31JqzOTW8ly3uDjkwLm7fcpuEfGdn3ihPOZFJ+GEDXS3zJT/Q6k+1NffqfCs8vQuwqGQXpeMNY7A66a9VH6HN8wqKV0s5VCxKF+jAWNkMJLUpqUNo9NHdK2wmz0E/zhtwFI25cXSrGmLDWz9tnm0q4o5vJWwIzPgUY0BKEqOQ9K35ql14VSyRlXS/vOka2/65g1omH4mIV05v1JFBJmsab8cggzJf792ouih68ltGRv47kmB9e1CLuuhedGBoFvNfAHGHkvb9rEfxavIm54xDeMWhC4WsmFMjiEwUUreZNzZkupzSXMR6/XbzhG7fCgxV2tC1wtgulpVa9tU3HfcD1yze9totExGGV8IczKNeAFMpu5FGirnb7YkFeXMvPyj6CnXYQ7MCP0l24x0g1E6nRlaaMfnC/EVGz5F46u6blw=
