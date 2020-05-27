@@ -17,7 +17,7 @@
 \tableofcontents[hideallsubsections]
 }
 
-\section{Software-Qualit\"at}
+\section{Qualit\"at}
 
 \frame{
 \frametitle{Qualität}
@@ -123,7 +123,7 @@ Bestätigung durch Bereitstellung eines objektiven Nachweises, dass die Anforder
 \begin{itemize}
 	\item Testen zeigt Anwesenheit von Fehlern
 	\item Vollständiges Testen ist nicht möglich
-	\item Mit dem Testen frühzeitig beginnen
+	\item Frühes Testen spart Geld und Zeit
 	\item Häufung von Fehlern
 	\item Zunehmende Testresistenz
 	\item Testen ist abhängig vom Umfeld
@@ -138,7 +138,7 @@ Bestätigung durch Bereitstellung eines objektiven Nachweises, dass die Anforder
 \begin{center}
 \begin{tikzpicture}
 \node (Fehlhandlung) at (0,0)  [rectangle, fill=LightOrange,   text width=6cm, minimum height=1em, text centered, rounded corners=8pt] {Fehlhandlung (error)};
-\node (Fehlerzustand) at (0,-1.5)  [rectangle, fill=LightOrange,   text width=6cm, minimum height=1em, text centered, rounded corners=8pt] {Fehlerzustand (bug, defect)};
+\node (Fehlerzustand) at (0,-1.5)  [rectangle, fill=LightOrange,   text width=6cm, minimum height=1em, text centered, rounded corners=8pt] {Fehlerzustand (bug, defect, fault)};
 \node (Fehlerwirkung) at (0,-3)  [rectangle, fill=LightOrange,   text width=6cm, minimum height=1em, text centered, rounded corners=8pt] {Fehlerwirkung (failure)};
 \node (Schaden) at (0,-4.5)  [rectangle, fill=LightOrange,   text width=6cm, minimum height=1em, text centered, rounded corners=8pt] {Schaden};
 \draw[->, very thick](Fehlhandlung) to node{} (Fehlerzustand);
@@ -322,7 +322,7 @@ Den Mitarbeitern einer Firma wird nur dann eine Prämie ausgeschüttet, wenn sie
 Testfall-ID & & T1 & T2 & T3 & T4 & T5 \\\hline
 Bedingung1 & Beschäftigung $>$ 1 Jahr? & Ja   & Nein & Nein & Ja & Nein \\ \hline
 Bedingung2 & Ziel vereinbart?          & Nein & Nein & Ja   & Ja & Ja   \\ \hline 
-Bedingung3 & Ziel erreicht ?           & Nein & Nein & Ja   & Ja & Nein \\ \hline 
+Bedingung3 & Ziel erreicht?            & Nein & Nein & Ja   & Ja & Nein \\ \hline 
 Aktion & Auszahlung der Prämie         & Nein & Nein & Nein & Ja & Nein \\ \hline 
 \end{tabular}
 \end{block}
@@ -504,12 +504,64 @@ Zwei Testfälle sind notwendig, um alle Entscheidungen abzudecken
 \subsection{Reviews}
 \frame{
 \frametitle{Reviews}
-\begin{block}{}
+\begin{block}{Definition}
 \begin{itemize}
-  \item Informelles Review
-  \item Technisches Review
-  \item Walkthrough
-  \item Inspektion
+  \item Art statischer Test, bei dem Arbeitsergebnis oder -prozess von einer oder mehreren Personen bewertet wird, um Fehlerzustände zu erkennen oder Verbesserungen zu erzielen
+  \item Durch Gutachter (Reviewer) prüfbar
+  \item Semantik im Vordergrund
+  \item Unterteilen sich in
+  \begin{itemize}
+    \item Informelles Review
+    \item Walkthrough
+    \item Technisches Review
+    \item Inspektion
+  \end{itemize}
+\end{itemize}
+\end{block}
+}
+
+\frame{
+\frametitle{Informelles Review}
+\begin{block}{Definition}
+\begin{itemize}
+  \item Art von Review, die keinem definierten Ablauf folgt
+  \item Ergebnisse werden nicht formal dokumentiert
+  \item Beispiele:
+  \begin{itemize}
+    \item Informelles Gruppenreview
+    \item Buddy-Check
+    \item Pair-Review
+  \end{itemize}  
+\end{itemize}
+\end{block}
+}
+
+\frame{
+\frametitle{Walkthrough}
+\begin{block}{Definition}
+\begin{itemize}
+  \item Art des formalen Reviews, bei dem Autor die Review-Teilnehmer durch das Arbeitsergebnis leitet
+  \item Teilnehmer stellen Fragen und kommentieren potentielle Befunde
+\end{itemize}
+\end{block}
+}
+
+\frame{
+\frametitle{Technisches Review}
+\begin{block}{Definition}
+\begin{itemize}
+  \item Art des formalen Reviews durch ein Team von technisch qualifiziertem Personal, das Qualität eines Arbeitsergebnisses überprüft
+  \item Stellt Abweichungen von Spezifikationen und Standards fest
+\end{itemize}
+\end{block}
+}
+
+\frame{
+\frametitle{Inspektion}
+\begin{block}{Definition}
+\begin{itemize}
+  \item Art des formalen Reviews, deren Ziel die Identifizierung von Befunden in einem Arbeitsprodukt ist
+  \item Liefert Messungen zur Verbesserung des Reviewprozesses und des Software-Entwicklungsprozesses
 \end{itemize}
 \end{block}
 }
@@ -517,11 +569,11 @@ Zwei Testfälle sind notwendig, um alle Entscheidungen abzudecken
 \subsection{Statische Analyse}
 \frame{
 \frametitle{Statische Analyse}
-\begin{block}{}
+\begin{block}{Definition}
 \begin{itemize}
-  \item Compilation
-  \item Datenflussanalyse
-  \item Kontrollflussanalyse
+  \item Art statischer Test, bei dem Arbeitsergebnis basierend auf seiner Form, seiner Struktur, seines Inhalts oder seiner Dokumentation bewertet wird, ohne es auszuführen
+  \item Durch Werkzeuge prüfbar
+  \item Syntax steht im Vordergrund
 \end{itemize}
 \end{block}
 }
