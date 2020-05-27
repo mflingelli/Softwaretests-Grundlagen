@@ -5,3 +5,7 @@
 Diese Präsentation vermittelt die theoretischen Grundlagen des Softwaretestens. Zielgruppe sind Software-Entwickler und hierbei insbesondere Auszubildende Fachinformatiker in der Fachrichtung Anwendungsentwicklung.
 
 Diese Präsentation erhebt nicht den Anspruch auf Vollständigkeit. Vielmehr soll sie die Bedeutung von Softwaretests im Bereich der Entwicklung verdeutlichen.
+
+## Downloads
+
+* [Entwurf](https://github.com/mflingelli/Softwaretests-Grundlagen/releases/download/Entwurf/Softwaretests.pdf)
