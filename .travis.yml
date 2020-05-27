@@ -21,6 +21,8 @@ deploy:
   file: Softwaretests.pdf
   on:
     repo: mflingelli/Softwaretests-Grundlagen
+    tags: true
+    branch: master
 env:
   global:
   - secure: Jdxuapygc7tkB0FRaS3pU6EyLiyXJ8xXEz6xyWyJkEouflRg7qwunuzwjxZ5RBQRpIykmYZWr9d+1xvrTM5KhDfK1G+RH+XFX4VVVkIRbSZ6yQ7Ww1/2uZcHU5Iy2oUdIyrECDfDKmsQGU8xqQ8drtQWZykL5MHAA4EycDWXzSbdjVX9GbUTN66ChMb/pGmZ2pBqlc+4QIowLvmRSz8Tqd32bu3yv05v7MQZ3VVunVInkXu6F9/2Aq9iOfT+sXvk4OhKgaK5f2OOkPf8LvD6H4IWkOuI+xvVfuA0MEu/1X1ffcT3Y3HcwuL+ljxrGXooxHlqzoW5PD/8T/mP1GnBIHvplRcuyLqpOGczt1+dyWVSnA+aXFKQTZ1zaEJY0C6DxO3yRbaXSFO3qdUcElMhkV+Bi0vyA4gcmBzQtt13YVWkY7vZLtKeUDiqBCGwlt9V86QieImQFOiSjTrSK7xzBs3b3yecNCrFJNKgHqXmIoHOV09dX+uWuzlp+CFJXlwm9rkgdPBptvX/KIoPTljknia2kJ661St8N11G0nGXHxcIoLQ2+FjooBm2ohV5rC2hbUiBuMwL3rtlZj3avhaVwf2nt8jOPlkafl2x+8py0DDnzk9KkDE6y/b2Hd4+C2LKtvTOfAEosERHCNexaLYxPmFMzH213hEzR9c/p7eF8Lc=
