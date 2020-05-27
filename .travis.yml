@@ -19,6 +19,9 @@ deploy:
   api_key:
     secure: RE2CWMj1V+zJP/RYmNS8Ui7i8+/7xcskxoVSCrX6VxRNn8XhB7Gi6O9zvsMVUd9XFLMVN9NfYGi+P1XF5l+FmNgk2JpgLAIKg/QzqmKxt59vOCnnpNxza1y0Bty45h3rBEky1U92MCEVkCH+y4tuHqLrNB/ocusdCboMHSuOQWnOz0Uo/5WuM+6hBeIEvQiBkpnpzZAjxFF67nHk+vECy3SetES5l5CuI49CQiw4QyiLuvMikX7GYFiGV0oZJTh4bnFXPjxGBrmYzM24phZfvwLQs85A5ML/XR+Bg6ViSVfGwORIzQiLz1cyT0FaF2W/XUeHbNKPpxS938JQttssTVwGdkOOfdnfzm41s3zwRmadurRHy0HfvE7OtkZK8pvSx3w2Z7ATa5o5eOCgO6miLJhFbCgh1YET7UuqVw1nr5gdFq4Cqz+xZAjrlXUe2PHwR4+of/IQlGb0+wjmKdqVCyNQ9MptRBZJbf9LzpeUQ4Imenz0fzUwVuNHvp9rKwUG/kO97pSXKhcgZY7KbZ9VPtTTVgNfdJvThevD+l9wbatT4Uev/2pYlRD9sMgDHlKZZ0z3FdTp1qYMl9MzJyo/Qe+V9R4+HpTQLLnwI8YCl+c9uaOl8knlJKAIISh4T9yAoDKBbPMYwpOxNgvbNyoTGJRzw4pVkICeJ/1MtdDlEZs=
   file: Softwaretests.pdf
+  skip_cleanup: true
+  draft: false
+  overwrite: true
   on:
     repo: mflingelli/Softwaretests-Grundlagen
     tags: true
