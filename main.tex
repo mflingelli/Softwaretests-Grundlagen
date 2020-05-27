@@ -20,11 +20,27 @@
 \section{Software-Qualit\"at}
 
 \frame{
-\frametitle{Software-Qualität}
-\begin{block}{Definition nach ISO 25010}
-\begin{quotation}
-\glqq Der Grad, zu dem eine Komponente oder ein System die expliziten und impliziten Bedürfnisse seiner verschiedenen Stackholder erfüllt.\grqq
-\end{quotation}
+\frametitle{Qualität}
+\begin{block}{Definition}
+\begin{enumerate}
+  \item Grad, in dem ein Satz inhärenter Merkmale eines Objekts Anforderungen erfüllt. [ISO 9000]
+  \item Grad, in dem eine Komponente oder ein System explizite Bedürfnisse erflüllt. [nach ISO 25010]
+  \item Grad, in dem eine Komponente oder ein System implizite Bedürfnisse erflüllt. [nach ISO 25010]
+\end{enumerate}
+\end{block}
+}
+
+\frame{
+\frametitle{Verifizierung}
+\begin{block}{Definition}
+Bestätigung durch Bereitstellung eines objektiven Nachweises, dass spezifizierte Anforderungen erfüllt worden sind.
+\end{block}
+}
+
+\frame{
+\frametitle{Validierung}
+\begin{block}{Definition}
+Bestätigung durch Bereitstellung eines objektiven Nachweises, dass die Anforderungen für einen spezifizierten beabsichtigten Gebrauch oder eine spezifische beabsichtigte Anwendung erfüllt worden sind.
 \end{block}
 }
 
@@ -37,11 +53,11 @@
   node[concept] {Qualität nach ISO 25010} [clockwise from=0]
       child { node[concept] (Functionality) {Funktionali\-tät} }
       child { node[concept] (Reliability) {Zuverlässig\-keit} }
-      child { node[concept] (Usability) {Gebrauchs\-tauglich\-keit} }
-      child { node[concept] (Security) {IT-Sicherheit} }
+      child { node[concept] (Usability) {Benutzbar\-keit} }
+      child { node[concept] (Security) {Sicherheit} }
       child { node[concept] (Maintainability) {Wartbarkeit} }
-      child { node[concept] (Efficiency) {Effizienz} }
-      child { node[concept] (Portability) {Portabilität} }
+      child { node[concept] (Efficiency) {Effizienz Performanz} }
+      child { node[concept] (Portability) {Übertrag\-bar\-keit} }
       child { node[concept] (Compatibility) {Kompatibili\-tät} };
 \end{tikzpicture}
 \end{center}
@@ -141,6 +157,26 @@
 	\item Debugging erfolgt in der Regel durch den Entwickler
 \end{itemize}
 \end{block}
+}
+
+\subsection{Testverfahren}
+
+\frame{
+\frametitle{Testverfahren}
+\begin{center}
+\begin{tikzpicture}
+\node at (4.5,3.5) [rectangle, fill=LightOrange, text width=10.6cm, minimum height=4em, text centered, rounded corners=8pt] {Testverfahren};
+
+\node at (2.2,1.75) [rectangle, fill=LightOrange, text width=6.1cm, minimum height=4em, text centered, rounded corners=8pt] {Dynamische Testverfahren};
+\node at (7.85,1.75) [rectangle, fill=LightOrange, text width=3.9cm, minimum height=4em, text centered, rounded corners=8pt] {Statische Testverfahren};
+
+\node at (0,0) [rectangle, fill=LightOrange, text width=1.75cm, minimum height=4em, text centered, rounded corners=8pt] {Black-Box};
+\node at (2.2,0) [rectangle, fill=LightOrange, text width=1.75cm, minimum height=4em, text centered, rounded corners=8pt] {White-Box};
+\node at (4.4,0) [rectangle, fill=LightOrange, text width=1.75cm, minimum height=4em, text centered, rounded corners=8pt] {erfahrungs\-basiert};
+\node at (6.8,0) [rectangle, fill=LightOrange, text width=1.75cm, minimum height=4em, text centered, rounded corners=8pt] {Reviews};
+\node at (9,0) [rectangle, fill=LightOrange, text width=1.75cm, minimum height=4em, text centered, rounded corners=8pt] {statische Analysen};
+\end{tikzpicture}
+\end{center}
 }
 
 \section{Dynamische Testverfahren}
