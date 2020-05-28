@@ -218,7 +218,7 @@ Teil des Wertebereichs von Ein- oder Ausgaben, in dem ein gleichartiges Verhalte
 }
 
 \frame{
-\frametitle{Beispiel: Äquivalenzklasse}
+\frametitle{Beispiel: Äquivalenzklassenbildung}
 \begin{block}{Anforderungen}
 \begin{itemize}
   \item Überschreitet ein Verkehrsteilnehmer die Geschwindigkeit ($v$) um mehr als 3 km/h bis einschließlich 10 km/h, beträgt die Strafe 20 Euro.
@@ -230,8 +230,7 @@ Teil des Wertebereichs von Ein- oder Ausgaben, in dem ein gleichartiges Verhalte
 }
 
 \frame{
-\frametitle{Beispiel: Äquivalenzklasse}
-\begin{block}{Äquivalenzklassenbildung}
+\frametitle{Beispiel: Äquivalenzklassenbildung}
 \begin{itemize}
   \item 3 gültige Äquivalenzklassen
   \begin{itemize}
@@ -264,7 +263,6 @@ Teil des Wertebereichs von Ein- oder Ausgaben, in dem ein gleichartiges Verhalte
 \node at (6.25, -2.5) {$ v \geq\ 21$};
 \end{tikzpicture}
 \end{center}
-\end{block}
 }
 
 \frame{
@@ -276,7 +274,6 @@ Teil des Wertebereichs von Ein- oder Ausgaben, in dem ein gleichartiges Verhalte
 
 \frame{
 \frametitle{Beispiel: Grenzwertanalyse}
-\begin{block}{Grenzwertanalyse}
 \begin{itemize}
   \item 3 km/h (ungültige Eingabe)
   \item 4 km/h (gültige Eingabe)
@@ -307,7 +304,6 @@ Teil des Wertebereichs von Ein- oder Ausgaben, in dem ein gleichartiges Verhalte
 \node at (6.25, -2.5) {$ v \geq\ 21$};
 \end{tikzpicture}
 \end{center}
-\end{block}
 }
 
 \frame{
@@ -430,7 +426,7 @@ Ein Testfall ist notwendig, um alle Anweisungen abzudecken
 \begin{block}{Definition}
 \begin{itemize}
   \item Durchläuft alle Zweige des Quellcodes
-  \item 100 \% Entscheidungsüberdeckung schließt 100 \% der Anweisungen ein
+  \item 100\% Entscheidungsüberdeckung schließt 100\% der Anweisungen ein
 \end{itemize}
 \end{block}
 }
@@ -450,13 +446,13 @@ Zwei Testfälle sind notwendig, um alle Entscheidungen abzudecken
 \frame{
 \frametitle{Pfadüberdeckung}
 \begin{block}{Definition}
-Testmethode, welche die Ausführung aller möglichen Pfade vom Start- zum Endknoten des Testobjektes erfordert.
+Testmethode, welche die Ausführung aller möglichen Pfade vom Start- zum Endknoten des Testobjektes erfordert
 \end{block}
 }
 
 \frame{
 \frametitle{Beispiel: Pfadüberdeckung}
-\tikzstyle{state} = [circle, text centered, draw=black, fill=blue!30]
+\tikzstyle{state} = [circle, text centered, draw=black, fill=LightOrange]
 \tikzstyle{arrow} = [->,>=stealth]
 \begin{center}
 \begin{tikzpicture}[scale=1,transform shape]
@@ -493,7 +489,7 @@ Testmethode, welche die Ausführung aller möglichen Pfade vom Start- zum Endkno
 \frametitle{Einfache und mehrfache Bedingungsüberdeckung}
 \begin{block}{Definitionen}
 \begin{itemize}
-  \item \textbf{Einfache Bedingungsüberdeckung}:\newline Jede atomare Bedingung einer Entscheidung muss einmal mit true und einmal mit false getestet werden.
+  \item \textbf{Einfache Bedingungsüberdeckung}:\newline Jede atomare Bedingung einer Entscheidung muss einmal mit \lstinline{true} und einmal mit \lstinline{false} getestet werden.
   \item \textbf{Mehrfache Bedingungsüberdeckung}:\newline Dieser Test betrachtet alle atomaren Bedingungen einer Bedingung. Wenn $n$ atomare Bedingungen in der Bedingung stehen, dann werden $2^n$ Kombinationen gebildet. 
 \end{itemize}
 \end{block}
@@ -586,7 +582,7 @@ Vier Testfälle sind notwendig:
   \begin{itemize}
     \item Informelles Review
     \item Walkthrough
-    \item Technisches Review
+    \item Technisches Review (Peer Review)
     \item Inspektion
   \end{itemize}
 \end{itemize}
@@ -635,6 +631,7 @@ Vier Testfälle sind notwendig:
 \begin{itemize}
   \item Art des formalen Reviews, deren Ziel die Identifizierung von Befunden in einem Arbeitsprodukt ist
   \item Liefert Messungen zur Verbesserung des Reviewprozesses und des Software-Entwicklungsprozesses
+  \item Jede beteiligte Person hat eine vorgeschriebene Rolle (Manager, Moderator, Autor, Gutachter, Protokollant)
 \end{itemize}
 \end{block}
 }
