@@ -146,6 +146,19 @@ Prozess, der sämtliche Testaktivitäten umfasst, welche den Zielen dienen
 \end{center}
 }
 
+\frame{
+\frametitle{Fehlerkultur}
+\begin{itemize}
+  \item Fehler eingestehen
+  \item Fehler nicht sanktionieren
+  \item Aus Fehlern lernen
+  \item Fehler sollen nicht blockieren
+  \item Fehler finden ist positiv
+  \item Fehler vom Verursacher beheben lassen
+  \item Fehler kommunizieren
+\end{itemize}
+}
+
 \subsection{Debugging}
 \frame{
 \frametitle{Debugging}
@@ -352,7 +365,7 @@ Testverfahren, bei der Tests aus einer in Form eines Zustandsautomaten vorliegen
 \draw[<-, very thick](-.5, .4) -- (-.5, 1.65);
 \node at (-1.5, 1) {Power On};
 \end{tikzpicture}
-\vspace{\fill}
+\end{center}
 \begin{tabular}{|l|l|l|l|l|l|}
 \hline
 Testfall & 1 & 2 & 3 & 4 & 5\\ \hline
@@ -360,7 +373,6 @@ Startzustand & S1 & S2 & S2 & S3 & S3\\ \hline
 Eingabe & Power On & Power Off & RC On & RC Off & Power Off\\ \hline
 Endzustand & S2 & S1 & S3 & S2 & S1\\ \hline
 \end{tabular}
-\end{center}
 }
 
 \frame{
@@ -408,7 +420,7 @@ Testverfahren, bei dem Testfälle im Hinblick auf die Ausführung verschiedener 
 \input{calcSum.tex}
 Ein Testfall ist notwendig, um alle Anweisungen abzudecken
 \begin{itemize}
-  \item Testfall 1: $value = 3$
+  \item Testfall 1: \lstinline{value = 3}
 \end{itemize}
 \end{block}
 \end{frame}
@@ -429,8 +441,8 @@ Ein Testfall ist notwendig, um alle Anweisungen abzudecken
 \input{calcSum.tex}
 Zwei Testfälle sind notwendig, um alle Entscheidungen abzudecken
 \begin{itemize}
-  \item Testfall 1: $value = 0$
-  \item Testfall 2: $value = 3$
+  \item Testfall 1: \lstinline{value = 0}
+  \item Testfall 2: \lstinline{value = 3}
 \end{itemize}
 \end{block}
 \end{frame}
@@ -438,8 +450,43 @@ Zwei Testfälle sind notwendig, um alle Entscheidungen abzudecken
 \frame{
 \frametitle{Pfadüberdeckung}
 \begin{block}{Definition}
-Beim Pfadüberdeckungstest werden im Kontrollflussgraphen die möglichen Pfade vom Startknoten bis zum Endknoten betrachtet.
+Testmethode, welche die Ausführung aller möglichen Pfade vom Start- zum Endknoten des Testobjektes erfordert.
 \end{block}
+}
+
+\frame{
+\frametitle{Beispiel: Pfadüberdeckung}
+\tikzstyle{state} = [circle, text centered, draw=black, fill=blue!30]
+\tikzstyle{arrow} = [->,>=stealth]
+\begin{center}
+\begin{tikzpicture}[scale=1,transform shape]
+\node (start) [circle,fill=black] at (-1.25,0) {};
+\node (S1) [state] at (0,0) {S1};
+\node (S2) [state] at (1.25,1.25) {S2};
+\node (S3) [state] at (2.25,0) {S3};
+\node (S4) [state] at (4,0) {S4};
+\node (S5) [state] at (5,1.25) {S5};
+\node (S6) [state] at (6.25,0) {S6};
+\node (stop) [circle,draw=black] at (7.5,0) {};
+\fill (7.5,0) circle(0.1);
+\draw [arrow](-1.25,0) -- node[anchor=north]{a} (S1);
+\draw [arrow](S1) -- node[anchor=east]{b} (S2);
+\draw [arrow](S1) -- node[anchor=north]{d} (S3);
+\draw [arrow](S2) -- node[anchor=west]{c} (S3);
+\draw [arrow](S3) -- node[anchor=north]{e} (S4);
+\draw [arrow](S4) -- node[anchor=east]{f} (S5);
+\draw [arrow](S4) -- node[anchor=north]{h} (S6);
+\draw [arrow](S5) -- node[anchor=west]{g} (S6);
+\draw [arrow](S6) -- node[anchor=south]{i} (stop);
+\end{tikzpicture}
+\end{center}
+4 Testfälle für 100\%-ige Pfadüberdeckung:
+\begin{itemize}
+  \item abcefgi
+  \item abcehi
+  \item adefgi
+  \item adehi
+\end{itemize}
 }
 
 \frame{
@@ -452,7 +499,32 @@ Beim Pfadüberdeckungstest werden im Kontrollflussgraphen die möglichen Pfade v
 \end{block}
 }
 
-\subsection{Vergleich Black- und White-Box-Testverfahren}
+\begin{frame}[fragile]
+\frametitle{Beispiel: Einfache Bedingungsüberdeckung}
+\begin{block}{}
+\input{conditionCoverage.tex}
+Zwei Testfälle sind notwendig, da jede Bedingung einmal \lstinline{true} und einmal \lstinline{false} sein muss:
+\begin{itemize}
+  \item Testfall 1: \lstinline{a=false} und \lstinline{b=false}
+  \item Testfall 2: \lstinline{a=true} und \lstinline{b=true}
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Beispiel: Mehrfache Bedingungsüberdeckung}
+\begin{block}{}
+\input{conditionCoverage.tex}
+Vier Testfälle sind notwendig:
+\begin{itemize}
+  \item Testfall 1: \lstinline{a=false} und \lstinline{b=false}
+  \item Testfall 2: \lstinline{a=true} und \lstinline{b=true}
+  \item Testfall 3: \lstinline{a=false} und \lstinline{b=true}
+  \item Testfall 4: \lstinline{a=true} und \lstinline{b=false}
+\end{itemize}
+\end{block}
+\end{frame}
+
 \frame{
 \frametitle{Vergleich Black- und White-Box-Testverfahrens}
 \begin{itemize}
@@ -467,6 +539,21 @@ Beim Pfadüberdeckungstest werden im Kontrollflussgraphen die möglichen Pfade v
     \item größerer organisatorischer Aufwand
 	\item zusätzlich eingefügte Funktionen bei der Implementierung werden nur durch Zufall getestet
 	\item Testsequenzen einer unzureichenden Spezifikation sind unbrauchbar
+  \end{itemize}
+\end{itemize}
+}
+
+\subsection{Erfahrungsbasiertes Testen}
+\frame{
+\frametitle{Erfahrungsbasiertes Testen}
+\begin{itemize}
+  \item Erfahrung und Wissen der Tester wird bei Erstellung der Testfälle einbezogen
+  \item Kompensation der mangelnden Qualität der Eingangsdokumentation durch Erfahrung und Wissen des Testers
+  \item Definition von Testfällen, die nur schwer durch systematische Testverfahren abgeleitet werden können
+  \item Beispiele
+   \begin{itemize}
+    \item Intuitives Testen (Error Guessing)
+	\item Exploratives Testen
   \end{itemize}
 \end{itemize}
 }
@@ -622,8 +709,17 @@ Beim Pfadüberdeckungstest werden im Kontrollflussgraphen die möglichen Pfade v
 \end{block}
 }
 
-\section{Literaturverzeichnis}
+\begin{frame}
+\frametitle{Übersicht Teststufen}
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=1.05\textwidth]{teststufen.png}
+\end{figure}
+\scriptsize{Quelle: \href{https://upload.wikimedia.org/wikipedia/commons/9/9c/Eigenschaften_der_Teststufen_II.png}{\url{https://upload.wikimedia.org/wikipedia/commons/9/9c/Eigenschaften_der_Teststufen_II.png}}}
+\end{frame}
 
+
+\section{Literaturverzeichnis}
 
 \frame{
 \frametitle{Literaturverzeichnis}
