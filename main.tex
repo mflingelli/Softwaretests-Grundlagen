@@ -24,8 +24,8 @@
 \begin{block}{Definition}
 \begin{enumerate}
   \item Grad, in dem ein Satz inhärenter Merkmale eines Objekts Anforderungen erfüllt. [ISO 9000]
-  \item Grad, in dem eine Komponente oder ein System explizite Bedürfnisse erflüllt. [nach ISO 25010]
-  \item Grad, in dem eine Komponente oder ein System implizite Bedürfnisse erflüllt. [nach ISO 25010]
+  \item Grad, in dem eine Komponente oder ein System explizite Bedürfnisse erfüllt. [ISO 25010]
+  \item Grad, in dem eine Komponente oder ein System implizite Bedürfnisse erfüllt. [ISO 25010]
 \end{enumerate}
 \end{block}
 }
@@ -68,14 +68,12 @@ Bestätigung durch Bereitstellung eines objektiven Nachweises, dass die Anforder
 \frame{
 \frametitle{Testen}
 \begin{block}{Definition}
+Prozess, der sämtliche Testaktivitäten umfasst, welche den Zielen dienen
 \begin{itemize}
-  \item Prozess, der sämtliche Testaktivitäten umfasst, welche dem Ziel dienen
-  \begin{itemize}
-    \item Nachweis der vollständigen Umsetzung der Anforderungen
-    \item Nachweis, dass System seinen Zweck erfüllt
-	\item Erreichen der festgelegten Qualitätsanforderungen
-	\item Aufdecken von etwaigen Fehlerzuständen
-  \end{itemize}
+  \item Nachweis der vollständigen Umsetzung der Anforderungen
+  \item Nachweis, dass System seinen Zweck erfüllt
+  \item Erreichen der festgelegten Qualitätsanforderungen
+  \item Aufdecken von etwaigen Fehlerzuständen
 \end{itemize}
 \end{block}
 }
@@ -184,9 +182,7 @@ Bestätigung durch Bereitstellung eines objektiven Nachweises, dass die Anforder
 \frame{
 \frametitle{Black-Box-Testverfahren}
 \begin{block}{Definition}
-\begin{itemize}
-	\item Testverfahren, das auf einer Analyse der Spezifikation einer Komponente oder eines System basiert.
-\end{itemize}
+Testverfahren, das auf einer Analyse der Spezifikation einer Komponente oder eines System basiert.
 \end{block}
 }
 
@@ -261,9 +257,7 @@ Teil des Wertebereichs von Ein- oder Ausgaben, in dem ein gleichartiges Verhalte
 \frame{
 \frametitle{Grenzwertanalyse}
 \begin{block}{Definition}
-\begin{itemize}
-  \item Stellt sicher, dass Fehler in kritischen Grenzbereichen der Äquivalenzklassen gefunden werden.
-\end{itemize}
+ Stellt sicher, dass Fehler in kritischen Grenzbereichen der Äquivalenzklassen gefunden werden.
 \end{block}
 }
 
@@ -306,9 +300,7 @@ Teil des Wertebereichs von Ein- oder Ausgaben, in dem ein gleichartiges Verhalte
 \frame{
 \frametitle{Entscheidungstabellen}
 \begin{block}{Definition}
-\begin{itemize}
-  \item Entscheidungstabellen werden eingesetzt, um komplexe Abhängigkeiten zwischen mehreren Bedingungen und den jeweils auszuführenden Aktionen übersichtlich, vollständig und widerspruchsfrei darzustellen.
-\end{itemize}
+Entscheidungstabellen werden eingesetzt, um komplexe Abhängigkeiten zwischen mehreren Bedingungen und den jeweils auszuführenden Aktionen übersichtlich, vollständig und widerspruchsfrei darzustellen.
 \end{block}
 }
 
@@ -331,9 +323,7 @@ Aktion & Auszahlung der Prämie         & Nein & Nein & Nein & Ja & Nein \\ \hli
 \frame{
 \frametitle{Zustandsbasierte Verfahren}
 \begin{block}{Definition}
-\begin{itemize}
-  \item Testverfahren, bei der Tests aus einer in Form eines Zustandsautomaten vorliegenden Spezifikation abgeleitet werden.
-\end{itemize}
+Testverfahren, bei der Tests aus einer in Form eines Zustandsautomaten vorliegenden Spezifikation abgeleitet werden.
 \end{block}
 }
 
@@ -376,9 +366,7 @@ Endzustand & S2 & S1 & S3 & S2 & S1\\ \hline
 \frame{
 \frametitle{Anwendungsfallbasierte Verfahren}
 \begin{block}{Definition}
-\begin{itemize}
-  \item Testverfahren, bei dem Testfälle im Hinblick auf die Ausführung verschiedener Verhalten eines Anwendungfalls entworfen werden.
-\end{itemize}
+Testverfahren, bei dem Testfälle im Hinblick auf die Ausführung verschiedener Verhalten eines Anwendungfalls entworfen werden.
 \end{block}
 }
 
@@ -450,15 +438,13 @@ Zwei Testfälle sind notwendig, um alle Entscheidungen abzudecken
 \frame{
 \frametitle{Pfadüberdeckung}
 \begin{block}{Definition}
-\begin{itemize}
-  \item Beim Pfadüberdeckungstest werden im Kontrollflussgraphen die möglichen Pfade vom Startknoten bis zum Endknoten betrachtet. 
-\end{itemize}
+Beim Pfadüberdeckungstest werden im Kontrollflussgraphen die möglichen Pfade vom Startknoten bis zum Endknoten betrachtet.
 \end{block}
 }
 
 \frame{
 \frametitle{Einfache und mehrfache Bedingungsüberdeckung}
-\begin{block}{Definition}
+\begin{block}{Definitionen}
 \begin{itemize}
   \item \textbf{Einfache Bedingungsüberdeckung}:\newline Jede atomare Bedingung einer Entscheidung muss einmal mit true und einmal mit false getestet werden.
   \item \textbf{Mehrfache Bedingungsüberdeckung}:\newline Dieser Test betrachtet alle atomaren Bedingungen einer Bedingung. Wenn $n$ atomare Bedingungen in der Bedingung stehen, dann werden $2^n$ Kombinationen gebildet. 
@@ -612,15 +598,6 @@ Zwei Testfälle sind notwendig, um alle Entscheidungen abzudecken
 \begin{itemize}
   \item Prüft das korrekte funktionale und technische Zusammenspiel zwischen Komponenten oder Systemen
   \item Soll Fehlerwirkungen in den Schnittstellen und Kommunikation zwischen den Komponenten aufdecken
-\end{itemize}
-\end{block}
-}
-
-\frame{
-\frametitle{Systemtest}
-\begin{block}{Definition}
-\begin{itemize}
-  \item Teststufe mit dem Schwerpunkt zu verifizieren, dass ein System als Ganzes die spezifizierten Anforderungen erfüllt
 \end{itemize}
 \end{block}
 }
