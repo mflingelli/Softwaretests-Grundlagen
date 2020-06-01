@@ -8,24 +8,26 @@
 \maketitle
 
 \section*{Aufgabe 1}
-Ein Programm Mengenbeziehungstest muss geprüft werden. Diesem Programm werden zwei Mengen $A$ und $B$ übergeben. Die folgende Tabelle spezifiziert dabei, unter welchen Bedigungen, welche Ausgabe verfolgen soll:
+Ein Programm \emph{Mengenbeziehungstest} muss geprüft werden. Diesem Programm werden zwei Mengen $A$ und $B$ übergeben und es prüft, in welcher Beziehung die Mengen zueinander stehen. Die folgende Tabelle spezifiziert dabei, unter welchen Bedigungen, welche Ausgabe verfolgen soll:
 
 \vspace{.3cm}
 
+\begin{center}
 \begin{tabular}{|l|l|}
 \hline
 \textbf{Bedingung} & \textbf{Ausgabe}\\ \hline
 $A \cup B = A \cap B$ & Gleichheit\\ \hline
-$A \subset B \lor B \subset B$ & Echte Teilmenge\\ \hline
+$A \subset B \lor B \subset A$ & Echte Teilmenge\\ \hline
 $A \cap B \neq \emptyset$ & Überdeckung\\ \hline
 $A \cap B = \emptyset$ & Disjunktion\\ \hline
 \end{tabular}
+\end{center}
 
 \subsection*{Aufgabe 1.1}
 Ist die Spezifikation ausreichend? Begründe Deine Aussage.
 
 \subsection*{Aufgabe 1.2}
-Wie viele Testfälle ergeben sich aus der Spezifikation. Begründe Deine Aussage.
+Wie viele Testfälle ergeben sich aus der Spezifikation? Begründe Deine Aussage.
 
 \newpage
 \section*{Aufgabe 2}
@@ -48,6 +50,7 @@ Innerorts gilt folgender Bußgeldkatalog (Stand 27.05.2020). Die Angabe der Gesc
 
 \vspace{.3cm}
 
+\begin{center}
 \begin{tabular}{|l|r|}
 \hline
 \textbf{Geschwindigkeitsüberschreitung} & \textbf{Bußgeld} \\ \hline\hline
@@ -62,14 +65,15 @@ Innerorts gilt folgender Bußgeldkatalog (Stand 27.05.2020). Die Angabe der Gesc
 61 – 70 km/h 	                 & 480 €   \\ \hline
 Über 70 km/h 	                 & 680 €   \\ \hline
 \end{tabular}
+\end{center}
 
 \subsection*{Aufgabe 3.1}
 Bestimme alle Äquivalenzklassen auf Basis der Spezifikation.
 
 \subsection*{Aufgabe 3.2}
-Erstelle eine neue Testklasse mit Testmethoden, welche für je einen Vertreter der Äquivalenzen einen Test implementiert.
+Erstelle eine neue Testklasse mit Testmethoden, welche für je einen Vertreter der Äquivalenzklassen einen Test implementiert.
 
-In dieser Übung soll das Verfahren \textit{Test Driven Development} verwendet werden, d.h zunächst sollen die Tests implementiert werden und anschließend erst die Methode.
+In dieser Übung soll das Verfahren \textit{Test Driven Development} verwendet werden, d.h. zunächst sollen die Tests implementiert werden und anschließend erst die Methode.
 
 \subsection*{Aufgabe 3.3}
 Erstelle eine neue Testklasse mit den notwendigen Testmethoden auf Basis der Grenzwertanalyse.
@@ -81,9 +85,10 @@ Ein Gastwirt hat Probleme mit der Zahlungsmoral einer Gäste. Einer seiner Gäst
 \begin{enumerate}
 \item Wenn ein Kunde jünger als 18 Jahre alt ist und nicht bezahlen kann, rufe dessen Eltern an.
 \item Wenn ein Kunde 18 Jahre und älter ist, kein Stammkunde ist und nicht bezahlen kann, dann rufe die Polizei an.
-\item Wenn der Kunde 18 Jahre und älter ist und Stammkunde ist und den Rechnungsbetrag nicht bezahlen kann, kann er diesen aufschreiben lassen.
+\item Wenn der Kunde 18 Jahre und älter und Stammkunde ist und den Rechnungsbetrag nicht bezahlen kann, kann er diesen aufschreiben lassen.
 \end{enumerate}
 
+\begin{center}
 \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
 \hline
  & & R1 & R2 & R3 & R4 & R5 & R6 & R7 & R8\\\hline \hline
@@ -95,6 +100,7 @@ A2 & Anruf bei den Eltern        &   &   &   &   &   &   &   &   \\ \hline
 A3 & Anruf bei der Polizei       &   &   &   &   &   &   &   &   \\ \hline
 A4 & Aufschreiben des Betrags    &   &   &   &   &   &   &   &   \\ \hline
 \end{tabular}
+\end{center}
 
 \subsection*{Aufgabe 4.1}
 Trage in die Entscheidungstabelle für jede mögliche Entscheidung die erwartete Aktion ein.
