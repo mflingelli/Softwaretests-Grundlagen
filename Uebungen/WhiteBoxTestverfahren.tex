@@ -1,0 +1,47 @@
+\input{header.tex}
+
+\title{Übungen: White-Box-Testverfahren}
+\author{Markus Flingelli}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{Aufgabe 1}
+Im Folgenden ist die Methode gegeben, welche den größten gemeinsamen Teiler der ganzen Zahlen $a$ und $b$ berechnet:
+
+\input{ggT.tex}
+
+\subsection*{Aufgabe 1.1}
+
+Implementiere obige Methode in einer Klasse.
+
+\subsection*{Aufgabe 1.2}
+
+Erstelle zu der implementierten Methode in der einer eigenen Testklasse alle Testfälle, die notwendig sind, um eine 100\%ige Testabdeckung zu erzielen.
+
+\newpage
+\section*{Aufgabe 2}
+Als Goldener Schnitt wird das Teilungsverhältnis einer Strecke oder anderen Größe bezeichnet, bei dem das Verhältnis des Ganzen zu seinem größeren Teil (auch Major genannt) dem Verhältnis des größeren zum kleineren Teil (dem Minor) gleich ist. Mit $a$ als Major und $b$ als Minor gilt also:
+
+\[  
+\frac{a}{b} = \frac{a + b}{a}
+\]
+
+Ein Entwickler erstellte eine Mehode, die prüft, ob bei ganzzahligen Werten $a$ und $b$ diese den goldenen Schnitt aufweisen: 
+
+\input{goldenerSchnitt.tex}
+
+\subsection*{Aufgabe 2.1}
+
+Implementiere obige Methode in einer Klasse.
+
+\subsection*{Aufgabe 2.2}
+
+Erstelle zu der implementierten Methode in der einer eigenen Testklasse alle Testfälle, die notwendig sind, um eine einfache Bedingungsüberdeckung zu erzielen.
+
+\subsection*{Aufgabe 2.2}
+
+Ergänze die Testfälle, die notwendig sind, um eine mehrfache Bedingungsüberdeckung zu erzielen.
+
+\end{document}

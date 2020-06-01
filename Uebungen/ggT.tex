@@ -1,0 +1,22 @@
+\begin{lstlisting}[language=Java]
+public static int gcd(int a, int b) {
+  int result;
+  if (b == 0) {
+    result = a;
+  } else {
+    if (a == 0) {
+      result = b;
+    } else {
+      while (b != 0) {
+        if (a > b) {
+          a -= b;
+        } else {
+          b -= a;
+        }
+      }
+      result = a;
+    }
+  }
+  return result;
+}
+\end{lstlisting}
