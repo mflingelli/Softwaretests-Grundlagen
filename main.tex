@@ -183,6 +183,25 @@ Prozess, der sämtliche Testaktivitäten umfasst, welche den Zielen dienen
 }
 
 \frame{
+\frametitle{Beispiel: Fehlerbegriff}
+\begin{center}
+\begin{tikzpicture}
+\node (Fehlhandlung) at (0,0)  [rectangle, fill=LightOrange,   text width=3cm, minimum height=1em, text centered, rounded corners=8pt] {Fehlhandlung};
+\node at (5.75,0) [text width=7cm,fill=ivory, rounded corners=8pt] {Nutzer teilt 5 durch 0};
+\node (Fehlerzustand) at (0,-1.75)  [rectangle, fill=LightOrange,   text width=3cm, minimum height=4em, text centered, rounded corners=8pt] {Fehlerzustand};
+\node at (5.75,-1.75) [text width=7cm,fill=ivory, rounded corners=8pt] {int divident = 5;\\int divisor = 0;\\double result = dividend / divisor;};
+\node (Fehlerwirkung) at (0,-3.5)  [rectangle, fill=LightOrange,   text width=3cm, minimum height=1em, text centered, rounded corners=8pt] {Fehlerwirkung};
+\node at (5.75,-3.5) [text width=7cm,fill=ivory, rounded corners=8pt] {java.lang.ArithmeticException: / by zero};
+\node (Schaden) at (0,-4.75)  [rectangle, fill=LightOrange,   text width=3cm, minimum height=1em, text centered, rounded corners=8pt] {Schaden};
+\node at (5.75,-4.75) [text width=7cm,fill=ivory, rounded corners=8pt] {Kunde fordert Nachbesserung};
+\draw[->, very thick](Fehlhandlung) to node{} (Fehlerzustand);
+\draw[->, very thick](Fehlerzustand) to node{} (Fehlerwirkung);
+\draw[->, very thick](Fehlerwirkung) to node{} (Schaden);
+\end{tikzpicture}
+\end{center}
+}
+
+\frame{
 \frametitle{Fehlerkultur}
 \begin{itemize}
   \item Fehler eingestehen
@@ -351,16 +370,44 @@ Entscheidungstabellen werden eingesetzt, um komplexe Abhängigkeiten zwischen me
 
 \frame{
 \frametitle{Beispiel: Entscheidungstabellen}
-\begin{block}{}
-Den Mitarbeitern einer Firma wird nur dann eine Prämie ausgeschüttet, wenn sie länger als ein Jahr im Unternehmen beschäftigt sind und ein Ziel erreichen, das vorher individuell vereinbart wurde.
-
-\begin{tabular}{|l|p{3cm}|l|l|l|l|l|}
+\begin{block}{Vollständige Entscheidungstabelle}
+\begin{tabular}{|p{5cm}|l|l|l|l|l|l|l|l|}
 \hline
-Testfall-ID & & T1 & T2 & T3 & T4 & T5 \\\hline
-Bedingung1 & Beschäftigung $>$ 1 Jahr? & Ja   & Nein & Nein & Ja & Nein \\ \hline
-Bedingung2 & Ziel vereinbart?          & Nein & Nein & Ja   & Ja & Ja   \\ \hline 
-Bedingung3 & Ziel erreicht?            & Nein & Nein & Ja   & Ja & Nein \\ \hline 
-Aktion & Auszahlung der Prämie         & Nein & Nein & Nein & Ja & Nein \\ \hline 
+\rowcolor{ivory}
+\textbf{Testfall-ID} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} \\\hline
+\rowcolor{ivory}
+\multicolumn{9}{|l|}{\textbf{Bedingungen}} \\ \hline
+1 Lieferfähig?               & T & T & T & T & F & F & F & F\\ \hline
+2 Angaben vollständig?       & T & T & F & F & T & T & F & F\\ \hline
+3 Bonität in Ordnung?        & T & F & T & F & T & F & T & F\\ \hline
+\rowcolor{ivory}
+\multicolumn{9}{|l|}{\textbf{Aktionen}} \\ \hline
+A Lieferung mit Rechnung     & X &   &   &   &   &   &   & \\ \hline
+B Lieferung als Nachnahme    &   & X &   &   &   &   &   & \\ \hline
+C Angaben vervollständigen   &   &   & X & X &   &   &   & \\ \hline
+D Mitteilen: nicht lieferbar &   &   &   &   & X & X & X & X\\ \hline
+\end{tabular}
+\end{block}
+}
+
+\frame{
+\frametitle{Beispiel: Entscheidungstabellen}
+\begin{block}{Reduzierte Entscheidungstabelle}
+\begin{tabular}{|p{5cm}|l|l|l|l|}
+\hline
+\rowcolor{ivory}
+\textbf{Testfall-ID} & \textbf{1} & \textbf{2} & \textbf{4'} & \textbf{5'} \\\hline
+\rowcolor{ivory}
+\multicolumn{5}{|l|}{\textbf{Bedingungen}} \\ \hline
+1 Lieferfähig?               & T & T & T & F \\ \hline
+2 Angaben vollständig?       & T & T & F & - \\ \hline
+3 Bonität in Ordnung?        & T & F & - & - \\ \hline
+\rowcolor{ivory}
+\multicolumn{5}{|l|}{\textbf{Aktionen}} \\ \hline
+A Lieferung mit Rechnung     & X &   &   &   \\ \hline
+B Lieferung als Nachnahme    &   & X &   &   \\ \hline
+C Angaben vervollständigen   &   &   & X &   \\ \hline
+D Mitteilen: nicht lieferbar &   &   &   & X \\ \hline
 \end{tabular}
 \end{block}
 }
@@ -400,7 +447,8 @@ Testverfahren, bei der Tests aus einer in Form eines Zustandsautomaten vorliegen
 \end{center}
 \begin{tabular}{|l|l|l|l|l|l|}
 \hline
-Testfall & 1 & 2 & 3 & 4 & 5\\ \hline
+\rowcolor{ivory}
+\textbf{Testfall} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5}\\ \hline
 Startzustand & S1 & S2 & S2 & S3 & S3\\ \hline
 Eingabe & Power On & Power Off & RC On & RC Off & Power Off\\ \hline
 Endzustand & S2 & S1 & S3 & S2 & S1\\ \hline
@@ -562,14 +610,14 @@ Vier Testfälle sind notwendig:
 \begin{itemize}
   \item Vorteile von Black-Box-Tests gegenüber White-Box-Tests 
   \begin{itemize}
-    \item bessere Verifikation des Gesamtsystems
+    \item Bessere Verifikation des Gesamtsystems
 	\item Testen von bedeutungsmäßigen Eigenschaften bei geeigneter Spezifikation
 	\item Portabilität von systematisch erstellten Testsequenzen auf plattformunabhängige Implementierungen
   \end{itemize}
   \item Nachteile von Black-Box-Tests gegenüber White-Box-Tests
   \begin{itemize}
-    \item größerer organisatorischer Aufwand
-	\item zusätzlich eingefügte Funktionen bei der Implementierung werden nur durch Zufall getestet
+    \item Größerer organisatorischer Aufwand
+	\item Zusätzlich eingefügte Funktionen bei der Implementierung werden nur durch Zufall getestet
 	\item Testsequenzen einer unzureichenden Spezifikation sind unbrauchbar
   \end{itemize}
 \end{itemize}
@@ -705,7 +753,7 @@ Vier Testfälle sind notwendig:
   \item Testet einzelne Software- oder Hardware-Komponente mit den Zielen
   \begin{itemize}
     \item Fehler aufzudecken und
-	\item vollständige Umsetzung der funktionalen Anforderungen an die Komponente nachzuweisen
+	\item Vollständige Umsetzung der funktionalen Anforderungen an die Komponente nachzuweisen
   \end{itemize}
   \item Komponententests von Software-Komponenten werden in der Regel vom Entwickler erstellt
 \end{itemize}

@@ -15,6 +15,7 @@ Ein Programm \emph{Mengenbeziehungstest} muss geprüft werden. Diesem Programm w
 \begin{center}
 \begin{tabular}{|l|l|}
 \hline
+\rowcolor{ivory}
 \textbf{Bedingung} & \textbf{Ausgabe}\\ \hline
 $A \cup B = A \cap B$ & Gleichheit\\ \hline
 $A \subset B \lor B \subset A$ & Echte Teilmenge\\ \hline
@@ -53,7 +54,8 @@ Innerorts gilt folgender Bußgeldkatalog (Stand 27.05.2020). Die Angabe der Gesc
 \begin{center}
 \begin{tabular}{|l|r|}
 \hline
-\textbf{Geschwindigkeitsüberschreitung} & \textbf{Bußgeld} \\ \hline\hline
+\rowcolor{ivory}
+\textbf{Geschwindigkeitsüberschreitung} & \textbf{Bußgeld} \\ \hline
 1 - 10 km/h                      & 15 €    \\ \hline
 11 – 15 km/h 	                 & 25 €	   \\ \hline
 16 – 20 km/h 	                 & 35 €	   \\ \hline
@@ -78,6 +80,9 @@ In dieser Übung soll das Verfahren \textit{Test Driven Development} verwendet w
 \subsection*{Aufgabe 3.3}
 Erstelle eine neue Testklasse mit den notwendigen Testmethoden auf Basis der Grenzwertanalyse.
 
+\subsection*{Aufgabe 3.4}
+Warum ist die Grenzwertanalyse eine gute Ergänzung zur Äquivalenzklassenbildung?
+
 \newpage
 \section*{Aufgabe 4}
 Ein Gastwirt hat Probleme mit der Zahlungsmoral einer Gäste. Einer seiner Gäste, ein Informatiker, schlägt ihm vor, folgendermaßen vorzugehen:
@@ -91,10 +96,13 @@ Ein Gastwirt hat Probleme mit der Zahlungsmoral einer Gäste. Einer seiner Gäst
 \begin{center}
 \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
 \hline
- & & R1 & R2 & R3 & R4 & R5 & R6 & R7 & R8\\\hline \hline
+\rowcolor{ivory}
+ & & R1 & R2 & R3 & R4 & R5 & R6 & R7 & R8\\\hline
+\multicolumn{10}{|l|}{\textbf{Bedingungen}} \\ \hline
 B1 & Kunde jünger als 18 Jahre?  & J & J & J & J & N & N & N & N \\ \hline
 B2 & Kunde kann Betrag bezahlen? & J & J & N & N & J & J & N & N \\ \hline 
-B3 & Kunde ist Stammkunde        & J & N & J & N & J & N & J & N \\ \hline \hline
+B3 & Kunde ist Stammkunde        & J & N & J & N & J & N & J & N \\ \hline
+\multicolumn{10}{|l|}{\textbf{Aktionen}} \\ \hline
 A1 & Bezahlen der Rechnung       &   &   &   &   &   &   &   &   \\ \hline 
 A2 & Anruf bei den Eltern        &   &   &   &   &   &   &   &   \\ \hline
 A3 & Anruf bei der Polizei       &   &   &   &   &   &   &   &   \\ \hline
