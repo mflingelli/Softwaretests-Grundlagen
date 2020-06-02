@@ -17,6 +17,42 @@
 \tableofcontents[hideallsubsections]
 }
 
+\frame{
+\frametitle{Software-Katastrophen}
+\begin{block}{Strahlungstod wegen Software-Fehlern}
+\begin{itemize}
+  \item Bestrahlungsmaschine für Krebspatienten verrechnete sich 2000 systematisch bei der Dosierung
+  \item Fehler kostete 8 Menschen das Leben, 20 wurden schwer verletzt
+  \item Grund: Die Berechnung basierte auf der Reihenfolge, in der Daten eingegeben wurden, was fehlerhafte Eingaben provozierte
+\end{itemize}
+\end{block}
+}
+
+\frame{
+\frametitle{Software-Katastrophen}
+\begin{block}{NASA Venus-Erkundung}
+\begin{itemize}
+  \item Venus Mariner 1 geht 1962 unterwegs verloren
+  \item Grund: Fehler in FORTRAN-Code, Bindestrich fehlte an einer Stelle im Programmtext
+  \item Mit 80 Million Dollar Schaden vermutlich der teuerste Bindestrich in der Geschichte der Menschheit
+\end{itemize}
+\end{block}
+}
+
+\frame{
+\frametitle{Software-Katastrophen}
+\begin{block}{Explosion Ariane 5}
+\begin{itemize}
+  \item Am 04.06.196 explodierte Ariane-5-Rakete 40 Sekunden nach dem Start
+  \item Verlust ca. 500 Millionen Dollar für Rakete und Satelliten
+  \item Grund: Überlauf bei Konvertierung von 64-Bit-Wert in 16 Bit signed integer
+  \item Übernommene Software stammte von Ariane 4, aber Ariane 5 flog schneller
+  \item  Software war für den eigentlichen Flug überflüssig und diente nur den Startvorbereitungen
+  \item Video: \href{https://www.youtube.com/watch?v=PK_yguLapgA}{\url{https://www.youtube.com/watch?v=PK_yguLapgA}}
+\end{itemize}
+\end{block}
+}
+
 \section{Qualit\"at}
 
 \frame{
@@ -81,7 +117,7 @@ Prozess, der sämtliche Testaktivitäten umfasst, welche den Zielen dienen
 \frame{
 \frametitle{Testen}
 \setbeamercolor{postit}{fg=black,bg=quoteColor}
-\begin{beamercolorbox}[sep=1em,wd=.9\textwidth]{postit}
+\begin{beamercolorbox}[sep=1em,wd=\textwidth]{postit}
   {\large \grqq Program testing can be a very effective way to show the presence of bugs, but is hopelessly inadequate for showing their absence.\grqq}
   \vskip5mm
   \hspace*\fill{\tiny --- Edsger Wybe Dijkstra, The Humble Programmer, ACM Turing Lecture 1972}
