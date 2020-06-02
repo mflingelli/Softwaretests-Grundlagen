@@ -11,5 +11,6 @@ Diese Präsentation erhebt nicht den Anspruch auf Vollständigkeit. Vielmehr sol
 ### Entwurf
 
 * [Präsentation: Softwaretests](https://github.com/mflingelli/Softwaretests-Grundlagen/releases/download/Entwurf/Softwaretests.pdf)
-* [Übungen: Black-Box-Testverfahren](https://github.com/mflingelli/Softwaretests-Grundlagen/releases/download/Entwurf/BlackBoxTestverfahren.pdf)
-* [Übungen: White-Box-Testverfahren](https://github.com/mflingelli/Softwaretests-Grundlagen/releases/download/Entwurf/WhiteBoxTestverfahren.pdf)
+* Übungen:
+    * [Black-Box-Testverfahren](https://github.com/mflingelli/Softwaretests-Grundlagen/releases/download/Entwurf/BlackBoxTestverfahren.pdf)
+    * [Übungen: White-Box-Testverfahren](https://github.com/mflingelli/Softwaretests-Grundlagen/releases/download/Entwurf/WhiteBoxTestverfahren.pdf)
