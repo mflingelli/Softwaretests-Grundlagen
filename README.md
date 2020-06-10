@@ -8,6 +8,14 @@ Diese Präsentation erhebt nicht den Anspruch auf Vollständigkeit. Vielmehr sol
 
 ## Downloads
 
+### Version 1.0
+
+* [Präsentation: Softwaretests](https://github.com/mflingelli/Softwaretests-Grundlagen/releases/download/v1.0/Softwaretests.pdf)
+* Übungen:
+    * [Black-Box-Testverfahren](https://github.com/mflingelli/Softwaretests-Grundlagen/releases/download/v1.0/BlackBoxTestverfahren.pdf)
+    * [Übungen: White-Box-Testverfahren](https://github.com/mflingelli/Softwaretests-Grundlagen/releases/download/v1.0/WhiteBoxTestverfahren.pdf)
+
+
 ### Entwurf
 
 * [Präsentation: Softwaretests](https://github.com/mflingelli/Softwaretests-Grundlagen/releases/download/Entwurf/Softwaretests.pdf)
