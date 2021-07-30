@@ -24,10 +24,11 @@ deploy:
   - Softwaretests.pdf
   - BlackBoxTestverfahren.pdf
   - WhiteBoxTestverfahren.pdf
-  cleanup: true
+  cleanup: false
   draft: false
   prerelease: true
   overwrite: true
+  skip_cleanup: true
   on:
     repo: mflingelli/Softwaretests-Grundlagen
     tags: true

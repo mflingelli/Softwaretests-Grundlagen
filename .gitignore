@@ -15,3 +15,5 @@
 *.pdf
 *.sh
 *.vrb
+*.sty
+mtheme/**
