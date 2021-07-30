@@ -1,5 +1,5 @@
+sudo: required
 language: ruby
-os: linux
 dist: xenial
 before_install:
 - sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6B05F25D762E3157
@@ -18,21 +18,19 @@ script:
 - pdflatex WhiteBoxTestverfahren.tex
 deploy:
   provider: releases
-  file:
-  - Softwaretests.pdf
-  - BlackBoxTestverfahren.pdf
-  - WhiteBoxTestverfahren.pdf
-  cleanup: true
-  draft: false
-  prerelease: true
-  overwrite: true
+  api_key:
+    secure: RE2CWMj1V+zJP/RYmNS8Ui7i8+/7xcskxoVSCrX6VxRNn8XhB7Gi6O9zvsMVUd9XFLMVN9NfYGi+P1XF5l+FmNgk2JpgLAIKg/QzqmKxt59vOCnnpNxza1y0Bty45h3rBEky1U92MCEVkCH+y4tuHqLrNB/ocusdCboMHSuOQWnOz0Uo/5WuM+6hBeIEvQiBkpnpzZAjxFF67nHk+vECy3SetES5l5CuI49CQiw4QyiLuvMikX7GYFiGV0oZJTh4bnFXPjxGBrmYzM24phZfvwLQs85A5ML/XR+Bg6ViSVfGwORIzQiLz1cyT0FaF2W/XUeHbNKPpxS938JQttssTVwGdkOOfdnfzm41s3zwRmadurRHy0HfvE7OtkZK8pvSx3w2Z7ATa5o5eOCgO6miLJhFbCgh1YET7UuqVw1nr5gdFq4Cqz+xZAjrlXUe2PHwR4+of/IQlGb0+wjmKdqVCyNQ9MptRBZJbf9LzpeUQ4Imenz0fzUwVuNHvp9rKwUG/kO97pSXKhcgZY7KbZ9VPtTTVgNfdJvThevD+l9wbatT4Uev/2pYlRD9sMgDHlKZZ0z3FdTp1qYMl9MzJyo/Qe+V9R4+HpTQLLnwI8YCl+c9uaOl8knlJKAIISh4T9yAoDKBbPMYwpOxNgvbNyoTGJRzw4pVkICeJ/1MtdDlEZs=
+  file: 
+    - Softwaretests.pdf
+    - BlackBoxTestverfahren.pdf
+    - WhiteBoxTestverfahren.pdf
   skip_cleanup: true
+  draft: false
+  overwrite: true
   on:
     repo: mflingelli/Softwaretests-Grundlagen
     tags: true
     branch: master
-  token:
-    secure: fw3LO/EV5PtE49GWjvL8+juhkpaZyecvqrmRUREkAojkrx5QlAS+l/5k0pRFxaMkkkYmP84+uOeaGnMm+cLkOhHGtxh2l5XkUp1brG4BdHDQYFaHooeiIW7Pa+jQJjFwHW4+CsrqeBpKtaGzC9FF4n2dKf6qfRCRp4ElehRsxUgeDMAJKYT6DJIzF0p5OhccrKuykFwCPmIM6OCCpX1FeTeg+oEU/Y9nvzwaPUftWQXcLY0HUyrCQG663wfH6zRykYGMlMQKFmoyUo19502HmGGMcyi+B46TgWZn7++JbSvBb5KtHrK2jeuki5AFYFc2IzHDzyS4pTCUQCpD+qOK4LOWPj3GirOnOLrT/eiOIJpAYZQagqLJBlKNyaMPBo96DQ23IYifUVSwuOFekSsqAS+K6DSCE73f5VcJEXY0weTvwuWi25m8fEIATp3DjIOYQ45n2EIGWlxLrs0haVBqDxKsmRDCCHJYNMmKnUWOmJnMtEOpqMDDZZv6H5QPBi8ihhzpJs+fdk9vuO8bTHVN0+apBvaEf3EUxec2XMh7ZUk7E10ErVrunLEWfAdGulrGLSrfFRjDoGRIJxKRTF2feFqIn1cp6dzr8E6TWDi7lJ7ju5TgKDBW+msFFzSucXIeAWTXLIs6r7Hd5qWodoE74AQaS0apvy6/tdTlM7QzMEI=
 env:
   global:
-  - secure: RPI2xAbFI3LEkFEBfTO7n5sH6zHNUpmJmbSXcflPqi1X4I6Ub1AqCKEuRVgkoqqok1k44BYAyhrukkRCfrU8PR45AwLUQ9zTBCFB7nW61Gcoa1D4wCxaFRRANDEFbJqqtyvwEdCKI0ThqvS7ZNCcgArpozUDd7ofaWaCOtodNEkiYDEZEo424z0OXKYE3Kx+y3Dl/Xxa6NemxMFi5WTL+3h/6mndY1SxoHX0EY6cQDnN/3Boj4yNnNnvNYlPNTXgDyi0G0O7JhXu3WTRpwD7bVtTk3qjauCGuGbVTB7nHFpgvItVucAwzquEqexG3POUy8qeGuUQ4KOo9fQzTZHTeJOYULA8LWrQiwKQgwTV31jV+f/Q+hpScoRiBit1itSAvweNR/Btc7y7ynqLPzFH5Gm5BxFA3JuZilL+GR1yIweC3iohp9HNBZCAfcJePGv/lkGA08AcG5oLvuJtiEXD3cXksZst9VLvnFVVWU4vMTxKK0jRgZqflSOzhuny2tAb3bGwc0ovmHEnwS+/x5WqFk3HzOdd4RzJUFtD7tRTOeXvOMgkWFv+0X6LJDaiAJLsZ0+wAtSYTTkaQf+xBAljEJi1jRdl5ThVfhl3exm4ASXsLDachGGwac/MaN7evT5vqldABEKuo0dEwgbNMHv9xENUR5PETDlUdlGpAqrTJw8=
+  - secure: Jdxuapygc7tkB0FRaS3pU6EyLiyXJ8xXEz6xyWyJkEouflRg7qwunuzwjxZ5RBQRpIykmYZWr9d+1xvrTM5KhDfK1G+RH+XFX4VVVkIRbSZ6yQ7Ww1/2uZcHU5Iy2oUdIyrECDfDKmsQGU8xqQ8drtQWZykL5MHAA4EycDWXzSbdjVX9GbUTN66ChMb/pGmZ2pBqlc+4QIowLvmRSz8Tqd32bu3yv05v7MQZ3VVunVInkXu6F9/2Aq9iOfT+sXvk4OhKgaK5f2OOkPf8LvD6H4IWkOuI+xvVfuA0MEu/1X1ffcT3Y3HcwuL+ljxrGXooxHlqzoW5PD/8T/mP1GnBIHvplRcuyLqpOGczt1+dyWVSnA+aXFKQTZ1zaEJY0C6DxO3yRbaXSFO3qdUcElMhkV+Bi0vyA4gcmBzQtt13YVWkY7vZLtKeUDiqBCGwlt9V86QieImQFOiSjTrSK7xzBs3b3yecNCrFJNKgHqXmIoHOV09dX+uWuzlp+CFJXlwm9rkgdPBptvX/KIoPTljknia2kJ661St8N11G0nGXHxcIoLQ2+FjooBm2ohV5rC2hbUiBuMwL3rtlZj3avhaVwf2nt8jOPlkafl2x+8py0DDnzk9KkDE6y/b2Hd4+C2LKtvTOfAEosERHCNexaLYxPmFMzH213hEzR9c/p7eF8Lc=
