@@ -1,6 +1,6 @@
 # Softwaretests - Grundlagen
 
-[![Build Status](https://api.travis-ci.org/mflingelli/Softwaretests-Grundlagen.svg)](https://travis-ci.org/mflingelli/Softwaretests-Grundlagen)
+[![Build Status](https://travis-ci.com/mflingelli/Softwaretests-Grundlagen.svg?branch=master)](https://travis-ci.com/mflingelli/Softwaretests-Grundlagen)
 
 Diese Präsentation vermittelt die theoretischen Grundlagen des Softwaretestens. Zielgruppe sind Software-Entwickler und hierbei insbesondere Auszubildende Fachinformatiker in der Fachrichtung Anwendungsentwicklung.
 
