@@ -18,12 +18,10 @@ script:
 - pdflatex WhiteBoxTestverfahren.tex
 deploy:
   provider: releases
-  user: mflingelli
   file:
   - Softwaretests.pdf
   - BlackBoxTestverfahren.pdf
   - WhiteBoxTestverfahren.pdf
-  cleanup: false
   draft: false
   prerelease: true
   overwrite: true
@@ -32,3 +30,5 @@ deploy:
     repo: mflingelli/Softwaretests-Grundlagen
     tags: true
     branch: master
+  api_key:
+    secure: LV6FEDB3G5dkPdskNiNY7RFX/ulfn6sedBK+12gfCJSjHqvjsYjjM24jkvka1jPRrxPChKkLLkkCJgNZonesHy0cEk80XqWHiyiqUluDrq2bNQgu8E27XW/59viQD6qgt86XQMjqGrigtsieIK2TF7aRk2r9Otzofz8/OejY5P/P8Ua4eWw0ZOt0+WyMJ52xayUzJMHWeEhCOLJzqdZFRY0XuVx0/2cMTqK7WFCVsiunxSxWWu5soneFhkNskZPzK5efcvqv1irjzEYJ43hnRkha9Y4uz7NGDayvT4J3/9CSJYZqTx5uW3j8SNm/8U0w07ZDQVSM7yzHkIYsoILwHt6BMo2yeJK0CYwDmAlPf8oW2+jG0jv171JXE56DQC8/NRJg7HKxOgiI7PV52Loe6lgT/TAD4CBzgWTLv5AklBiEtk1PkHa7hy0sJvm+0xh+NUtdaHhSOE5zTvyatiFjhOlWU+6ZHbxRYtc1WBcVAZo/+pvdnuEX1Awk51VkfCwkke44FapfKS9TidT/pHlPVBZEMNsvatXoUL9UIcIOI/bIyslX8uJ4WXUIK+VkkMRyaYtTNMx+7WA4SihtyIHqf2D6zdww9DYZ2LjWC3CJWy4eZUfsSSqps1j1+IJ2jstMse5RK/gmOd9yyTAvG1k0VXONr+83yuMDbUaIrEQNHSs=
