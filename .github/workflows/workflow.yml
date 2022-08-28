@@ -1,0 +1,33 @@
+name: Softwaretests-Grundlagen
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: TeXLive installation
+        run: |
+          sudo apt-get -qq update
+          sudo apt-get install -y --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended texlive-lang-german git
+      - name: Prepartion of mtheme
+        run: |
+          git clone https://github.com/matze/mtheme.git
+          cd mtheme
+          make sty
+          cp *.sty ../
+          cd ../
+      - name: LaTeX compilation
+        run: |
+          pdflatex Softwaretests.tex > /dev/null 2>&1
+          pdflatex Softwaretests.tex > /dev/null 2>&1
+          pdflatex BlackBoxTestverfahren.tex > /dev/null 2>&1
+          pdflatex WhiteBoxTestverfahren.tex > /dev/null 2>&1
+      - name: Draft release
+        uses: softprops/action-gh-release@v1
+        with:
+          draft: true
+          files: |
+            Softwaretests.pdf
+            BlackBoxTestverfahren.pdf
+            WhiteBoxTestverfahren.pdf
