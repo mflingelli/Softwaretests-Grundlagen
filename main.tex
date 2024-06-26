@@ -53,6 +53,17 @@
 \end{block}
 }
 
+\frame{
+\frametitle{Warum testen wir?}
+\begin{block}{}
+  \begin{itemize}
+    \item Testen ist kosteneffizientes Mittel zur Erkennung von Fehlerzuständen
+    \item Testen bietet ein Mittel zur Bewertung der Qualität eines Teilobjektes in verschiedenen Phasen des SDLC (Software Development Life Cycle)
+    \item Testen kann auch erforderlich sein, um vertragliche oder gesetzliche Anforderungen zu erfüllen
+  \end{itemize}
+\end{block}
+}
+
 \section{Qualit\"at}
 
 \subsection{Standards}
@@ -94,13 +105,109 @@ Bestätigung durch Bereitstellung eines objektiven Nachweises, dass die Anforder
       child { node[concept] (Functionality) {Funktionali\-tät} }
       child { node[concept] (Reliability) {Zuverlässig\-keit} }
       child { node[concept] (Usability) {Benutzbar\-keit} }
-      child { node[concept] (Security) {Sicherheit} }
+      child { node[concept] (Security) {IT-Sicherheit} }
       child { node[concept] (Maintainability) {Wartbarkeit} }
       child { node[concept] (Efficiency) {Effizienz Performanz} }
       child { node[concept] (Portability) {Übertrag\-bar\-keit} }
       child { node[concept] (Compatibility) {Kompatibili\-tät} };
 \end{tikzpicture}
 \end{center}
+}
+
+\frame{
+	\frametitle{Hauptqualitätsmerkmale von Software}
+	\begin{block}{Funktionalität}
+		\begin{itemize}
+			\item Wie wird die gewünschte Funktionalität der Software geliefert? 
+			\item Ist funktionale Korrektheit gegeben?
+			\item Sind die Softwarefunktionen vollständig?
+			\item Liegt angemessene Funktionalität vor?
+		\end{itemize}
+	\end{block}
+}
+
+\frame{
+	\frametitle{Hauptqualitätsmerkmale von Software}
+	\begin{block}{Effizienz/Performanz}
+		\begin{itemize}
+			\item Wie effizient ist das System in Relation zu dessen Ressourcenverbrauch? 
+			\item Beweist das System ein gutes Zeitverhalten?
+			\item Nutzt es Ressourcen effektiv?
+			\item Schont es Kapazitäten?
+		\end{itemize}
+	\end{block}
+}
+
+\frame{
+	\frametitle{Hauptqualitätsmerkmale von Software}
+	\begin{block}{Kompatibilität}
+		\begin{itemize}
+			\item Wie kompatibel ist das System mit anderen Systemen auf anderer oder gleicher Hardware? 
+			\item Ist die Co-Existenz zu anderer Software optimal?
+			\item Ist das System interoperabel?
+		\end{itemize}
+	\end{block}
+}
+
+\frame{
+	\frametitle{Hauptqualitätsmerkmale von Software}
+	\begin{block}{Benutzbarkeit}
+		\begin{itemize}
+			\item Wie gut lassen sich Ziele mit der Software für den Benutzer erreichen?
+			\item Ist das System leicht erlernbar?
+			\item Ist es gut bedienbar?
+			\item Ist es vor Nutzerfehlern geschützt?
+			\item Ist das User-Interface ansprechend?
+		\end{itemize}
+	\end{block}
+}
+
+\frame{
+	\frametitle{Hauptqualitätsmerkmale von Software}
+	\begin{block}{Zuverlässigkeit}
+		\begin{itemize}
+			\item Wie zuverlässig ist die Leistung des Systems? 
+			\item Ist die Software ausgereift?
+			\item Weist sie eine Fehlertoleranz auf?
+			\item Ist sie wiederherstellbar?
+		\end{itemize}
+	\end{block}
+}
+
+\frame{
+	\frametitle{Hauptqualitätsmerkmale von Software}
+	\begin{block}{IT-Sicherheit}
+		\begin{itemize}
+			\item Wie schützt das System Daten? 
+			\item Ist die Software imstande Datensicherheit zu gewährleisten?
+			\item Ist das System integer?
+			\item Ist das System vor Manipulation geschützt?
+		\end{itemize}
+	\end{block}
+}
+
+\frame{
+	\frametitle{Hauptqualitätsmerkmale von Software}
+	\begin{block}{Wartbarkeit}
+		\begin{itemize}
+			\item Wie anpassungsfähig ist das System in Hinblick auf Fehlerkorrektur oder Veränderbarkeit als Reaktion auf dessen Umwelt oder sich wandelnde Rahmenbedingungen? 
+			\item Ist die Software modular aufgebaut?
+			\item Besteht sie aus wiederverwendbaren Komponenten?
+			\item Ist sie leicht modifizierbar?
+		\end{itemize}
+	\end{block}
+}
+
+\frame{
+	\frametitle{Hauptqualitätsmerkmale von Software}
+	\begin{block}{Übertragbarkeit}
+		\begin{itemize}
+			\item Wie übertragbar ist die Software? 
+			\item Kann die Software von einer Umgebung in eine andere übertragen werden?
+			\item Ist sie leicht zu installieren?
+			\item Ist sie leicht austauschbar?
+		\end{itemize}
+	\end{block}
 }
 
 \subsection{Rule of Ten}
@@ -149,6 +256,32 @@ Prozess, der sämtliche Testaktivitäten umfasst, welche den Zielen dienen
 \end{beamercolorbox}
 }
 
+\subsection{Testziele}
+
+\frame{
+\frametitle{Testziele}
+\begin{block}{}
+  \begin{itemize}
+    \item Evaluieren von Arbeitsergebnissen wie Anforderungen, User Storys, Entwürfe und Code
+    \item Auslösen von Fehlerwirkungen und Finden von Fehlerzuständen
+    \item Sicherstellen der erforderlichen Überdeckung eines Testobjekts
+    \item Verringern des Risikos einer unzureichenden Softwarequalität
+    \item Verifizieren, ob ein Testobjekt den vertraglichen, rechtlichen und regulatorischen Anforderungen entspricht
+  \end{itemize}
+\end{block}
+}
+
+\frame{
+\frametitle{Testziele}
+\begin{block}{}
+  \begin{itemize}
+    \item Bereitstellen von Informationen für die Stakeholder, damit diese fundierten Entscheidungen treffen können (z.B. Freigabeentscheidung eines Releases)
+    \item Aufbauen von Vertrauen in die Qualität des Testobjekts
+    \item Validieren, ob das Testobjekt vollständig ist und aus Sicht der Stakeholder wie erwartet funktioniert
+  \end{itemize}
+\end{block}
+}
+
 \subsection{Testprozess}
 
 \frame{
@@ -180,17 +313,29 @@ Prozess, der sämtliche Testaktivitäten umfasst, welche den Zielen dienen
 \frame{
 \frametitle{Allgemeine Prinzipien des Softwaretestens}
 \begin{itemize}
-	\item Testen zeigt Anwesenheit von Fehlern
-	\item Vollständiges Testen ist nicht möglich
-	\item Frühes Testen spart Geld und Zeit
-	\item Häufung von Fehlern
-	\item Zunehmende Testresistenz
-	\item Testen ist abhängig vom Umfeld
-	\item Trugschluss: Keine Fehler bedeuten ein brauchbares System
+  \item Testen zeigt Anwesenheit von Fehlern, nicht die Abwesenheit von Fehlerzuständen
+  \item Vollständiges Testen ist nicht möglich
+  \item Frühes Testen spart Geld und Zeit
+  \item Fehlerzustände treten gehäuft auf
+  \item Tests nutzen sich ab (Testresistenz)
+  \item Testen ist abhängig vom Umfeld
+  \item Trugschluss: Keine Fehler bedeuten ein brauchbares System
 \end{itemize}
 }
 
 \subsection{Fehlerbegriff}
+
+\frame{
+\frametitle{Fehlerbegriff}
+\begin{block}{}
+  \begin{itemize}
+    \item Menschen begehen Fehlhandlungen (Irrtümer, errors)
+    \item Fehlhandlungen führen zu Fehlerzuständen (Defekten, bugs, defects, faults)
+    \item Fehlerwirkungen (failures) können durch Fehlerzuständen ausgelöst werden
+    \item Fehlerwirkungen können auch durch Umweltbedingungen verursacht werden
+  \end{itemize}
+\end{block}
+}
 
 \frame{
 \frametitle{Fehlerbegriff}
@@ -244,9 +389,57 @@ Prozess, der sämtliche Testaktivitäten umfasst, welche den Zielen dienen
 \frametitle{Debugging}
 \begin{block}{Definition}
 \begin{itemize}
-	\item Prozess der Aufdeckung, Analyse und Entfernung der Ursache von Fehlerwirkungen in einer Komponente oder einem Fehler
+  \item Prozess der Aufdeckung, Analyse und Entfernung der Ursache von Fehlerwirkungen in einer Komponente oder einem Fehler
+  \item Typischer Debugging-Prozess:
+    \begin{itemize}
+	  \item Reproduzieren einer Fehlerwirkung
+	  \item Diagnose (Befund einer Grundursache)
+	  \item Behebung der Ursache
+    \end{itemize}
 	\item Debugging erfolgt in der Regel durch den Entwickler
 \end{itemize}
+\end{block}
+}
+
+\subsection{Testarten}
+
+\frame{
+\frametitle{Testarten}
+\begin{block}{Testarten}
+  \begin{itemize}
+    \item Funktionaler Test
+    \item Nicht-funktionaler Test
+    \item Black-Box-Test
+    \item White-Box-Test
+  \end{itemize}
+\end{block}
+}
+
+\frame{
+\frametitle{Testarten}
+\begin{block}{Funktionaler Test}
+Testen, welches durchgeführt wird, um die Erfüllung der funktionalen Anforderungen durch eine Komponente oder ein System zu bewerten.
+\end{block}
+}
+
+\frame{
+\frametitle{Testarten}
+\begin{block}{Nicht-funktionaler Test}
+Testen, welches durchgeführt wird, um die Erfüllung der nicht-funktionalen Anforderungen durch eine Komponente oder ein System zu bewerten.
+\end{block}
+}
+
+\frame{
+\frametitle{Black-Box-Test}
+\begin{block}{Definition}
+Testen auf der Grundlage einer Analyse der Spezifikation der Komponente oder des Systems.
+\end{block}
+}
+
+\frame{
+\frametitle{White-Box-Test}
+\begin{block}{Definition}
+Ein Test, der auf der Analyse der internen Struktur einer Komponente oder eines Systems basiert.
 \end{block}
 }
 
@@ -275,7 +468,7 @@ Prozess, der sämtliche Testaktivitäten umfasst, welche den Zielen dienen
 \frame{
 \frametitle{Black-Box-Testverfahren}
 \begin{block}{Definition}
-Testverfahren, das auf einer Analyse der Spezifikation einer Komponente oder eines Systems basiert.
+Ein Testverfahren, das auf einer Analyse der Spezifikation einer Komponente oder eines Systems basiert.
 \end{block}
 }
 
@@ -483,7 +676,7 @@ Endzustand & S2 & S1 & S3 & S2 & S1\\ \hline
 \frame{
 \frametitle{Anwendungsfallbasierte Verfahren}
 \begin{block}{Definition}
-Testverfahren, bei dem Testfälle im Hinblick auf die Ausführung verschiedener Verhalten eines Anwendungfalls entworfen werden.
+Testverfahren, bei dem Testfälle im Hinblick auf die Ausführung verschiedener Verhalten eines Anwendungsfalls entworfen werden.
 \end{block}
 }
 
@@ -491,10 +684,7 @@ Testverfahren, bei dem Testfälle im Hinblick auf die Ausführung verschiedener 
 \frame{
 \frametitle{White-Box-Testverfahren}
 \begin{block}{Definition}
-\begin{itemize}
-	\item Testverfahren, das nur auf der inneren Struktur einer Komponente oder eines Systems basiert.
-	\item Grundlage des Tests ist der Programmcode.
-\end{itemize}
+Ein Testverfahren, das nur auf der inneren Struktur einer Komponente oder eines Systems basiert.
 \end{block}
 }
 
@@ -657,8 +847,9 @@ Vier Testfälle sind notwendig:
   \item Definition von Testfällen, die nur schwer durch systematische Testverfahren abgeleitet werden können
   \item Beispiele
    \begin{itemize}
-    \item Intuitives Testen (Error Guessing)
-	\item Exploratives Testen
+      \item Intuitive Testfallermittlung
+      \item Explorativer Test
+      \item Checklistenbasierter Test
   \end{itemize}
 \end{itemize}
 }
@@ -830,7 +1021,7 @@ Vier Testfälle sind notwendig:
 \frame{
 \frametitle{Literaturverzeichnis}
 \begin{thebibliography}{10}
-  \bibitem{GTB} German Testing Board: \emph{Standard Glossary of Terms used in Software Testing}. Version 3.3,  \href{https://www.german-testing-board.info/wp-content/uploads/2019/10/ISTQB-Glossary_Testbegriffe_V3.2.4_DE.pdf}{\url{https://www.german-testing-board.info/wp-content/uploads/2019/10/ISTQB-Glossary_Testbegriffe_V3.2.4_DE.pdf}}, 25. Februar 2020
+  \bibitem{ATB} Austrian Testing Board, German Testing Board e. V. \& Swiss Testing Board: \emph{ISTQB Certified Tester -- Lehrplan Foundation Level}. Version 4.0.1a, \href{https://www.austriantestingboard.at/wp-content/uploads/2023/09/ISTQB_CTFL_Lehrplan-2023_V4.0.1a_DE.pdf}{\url{https://www.austriantestingboard.at/wp-content/uploads/2023/09/ISTQB_CTFL_Lehrplan-2023_V4.0.1a_DE.pdf}}, 16. August 2023
 \end{thebibliography} 
 }
 
