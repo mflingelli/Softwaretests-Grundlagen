@@ -21,7 +21,7 @@
 \frametitle{Software-Katastrophen}
 \begin{block}{Strahlungstod wegen Software-Fehlern}
 \begin{itemize}
-  \item Bestrahlungsmaschine für Krebspatienten verrechnete sich 2000 systematisch bei der Dosierung
+  \item Bestrahlungsmaschine für Krebspatienten verrechnete sich im Jahr 2000 systematisch bei der Dosierung
   \item Fehler kostete 8 Menschen das Leben, 20 wurden schwer verletzt
   \item Grund: Die Berechnung basierte auf der Reihenfolge, in der Daten eingegeben wurden, was fehlerhafte Eingaben provozierte
 \end{itemize}
@@ -84,14 +84,14 @@
 \frame{
 \frametitle{Verifizierung}
 \begin{block}{Definition}
-Bestätigung durch Bereitstellung eines objektiven Nachweises, dass spezifizierte Anforderungen erfüllt worden sind.
+Bestätigung durch Bereitstellung eines objektiven Nachweises, dass festgelegte Anforderungen erfüllt worden sind.
 \end{block}
 }
 
 \frame{
 \frametitle{Validierung}
 \begin{block}{Definition}
-Bestätigung durch Bereitstellung eines objektiven Nachweises, dass die Anforderungen für einen spezifizierten beabsichtigten Gebrauch oder eine spezifische beabsichtigte Anwendung erfüllt worden sind.
+Bestätigung durch Überprüfung, dass ein Arbeitsergebnis den Bedürfnissen eines Stakeholders entspricht.
 \end{block}
 }
 
@@ -102,12 +102,12 @@ Bestätigung durch Bereitstellung eines objektiven Nachweises, dass die Anforder
   \tikzstyle{level 1 concept}+=[font=\sf, sibling angle=45]
   \path[mindmap,concept color=LightOrange,text=black,every node/.style={concept}]
   node[concept] {Qualität nach ISO 25010} [clockwise from=0]
-      child { node[concept] (Functionality) {Funktionali\-tät} }
+      child { node[concept] (Functionality) {Funktionale Eignung} }
       child { node[concept] (Reliability) {Zuverlässig\-keit} }
-      child { node[concept] (Usability) {Benutzbar\-keit} }
+      child { node[concept] (Usability) {Gebrauchs\-tauglichkeit} }
       child { node[concept] (Security) {IT-Sicherheit} }
       child { node[concept] (Maintainability) {Wartbarkeit} }
-      child { node[concept] (Efficiency) {Effizienz Performanz} }
+      child { node[concept] (Efficiency) {Performanz} }
       child { node[concept] (Portability) {Übertrag\-bar\-keit} }
       child { node[concept] (Compatibility) {Kompatibili\-tät} };
 \end{tikzpicture}
@@ -115,99 +115,97 @@ Bestätigung durch Bereitstellung eines objektiven Nachweises, dass die Anforder
 }
 
 \frame{
-	\frametitle{Hauptqualitätsmerkmale von Software}
-	\begin{block}{Funktionalität}
-		\begin{itemize}
-			\item Wie wird die gewünschte Funktionalität der Software geliefert? 
-			\item Ist funktionale Korrektheit gegeben?
-			\item Sind die Softwarefunktionen vollständig?
-			\item Liegt angemessene Funktionalität vor?
-		\end{itemize}
-	\end{block}
+\frametitle{Hauptqualitätsmerkmale von Software}
+\begin{block}{Funktionale Eignung}
+\begin{itemize}
+  \item Funktionale Vollständigkeit
+  \item Funktionale Richtigkeit
+  \item Funktionale Angemessenheit
+\end{itemize}
+\end{block}
 }
 
 \frame{
-	\frametitle{Hauptqualitätsmerkmale von Software}
-	\begin{block}{Effizienz/Performanz}
-		\begin{itemize}
-			\item Wie effizient ist das System in Relation zu dessen Ressourcenverbrauch? 
-			\item Beweist das System ein gutes Zeitverhalten?
-			\item Nutzt es Ressourcen effektiv?
-			\item Schont es Kapazitäten?
-		\end{itemize}
-	\end{block}
+\frametitle{Hauptqualitätsmerkmale von Software}
+\begin{block}{Performanz}
+\begin{itemize}
+  \item Zeitverhalten 
+  \item Ressourcennutzung
+  \item Kapazität
+\end{itemize}
+\end{block}
 }
 
 \frame{
-	\frametitle{Hauptqualitätsmerkmale von Software}
-	\begin{block}{Kompatibilität}
-		\begin{itemize}
-			\item Wie kompatibel ist das System mit anderen Systemen auf anderer oder gleicher Hardware? 
-			\item Ist die Co-Existenz zu anderer Software optimal?
-			\item Ist das System interoperabel?
-		\end{itemize}
-	\end{block}
+\frametitle{Hauptqualitätsmerkmale von Software}
+\begin{block}{Kompatibilität}
+\begin{itemize}
+  \item Koexistenz
+  \item Interoperabilität
+\end{itemize}
+\end{block}
 }
 
 \frame{
-	\frametitle{Hauptqualitätsmerkmale von Software}
-	\begin{block}{Benutzbarkeit}
-		\begin{itemize}
-			\item Wie gut lassen sich Ziele mit der Software für den Benutzer erreichen?
-			\item Ist das System leicht erlernbar?
-			\item Ist es gut bedienbar?
-			\item Ist es vor Nutzerfehlern geschützt?
-			\item Ist das User-Interface ansprechend?
-		\end{itemize}
-	\end{block}
+\frametitle{Hauptqualitätsmerkmale von Software}
+\begin{block}{Gebrauchstauglichkeit}
+\begin{itemize}
+  \item Erkennbare Angemessenheit
+  \item Erlernbarkeit
+  \item Operabilität
+  \item Ästhetik der Benutzungsschnittstelle
+  \item Zugänglichkeit
+\end{itemize}
+\end{block}
 }
 
 \frame{
-	\frametitle{Hauptqualitätsmerkmale von Software}
-	\begin{block}{Zuverlässigkeit}
-		\begin{itemize}
-			\item Wie zuverlässig ist die Leistung des Systems? 
-			\item Ist die Software ausgereift?
-			\item Weist sie eine Fehlertoleranz auf?
-			\item Ist sie wiederherstellbar?
-		\end{itemize}
-	\end{block}
+\frametitle{Hauptqualitätsmerkmale von Software}
+\begin{block}{Zuverlässigkeit}
+\begin{itemize}
+  \item Reife
+  \item Verfügbarkeit
+  \item Fehlertoleranz
+  \item Wiederherstellbarkeit
+\end{itemize}
+\end{block}
 }
 
 \frame{
-	\frametitle{Hauptqualitätsmerkmale von Software}
-	\begin{block}{IT-Sicherheit}
-		\begin{itemize}
-			\item Wie schützt das System Daten? 
-			\item Ist die Software imstande Datensicherheit zu gewährleisten?
-			\item Ist das System integer?
-			\item Ist das System vor Manipulation geschützt?
-		\end{itemize}
-	\end{block}
+\frametitle{Hauptqualitätsmerkmale von Software}
+\begin{block}{IT-Sicherheit}
+\begin{itemize}
+  \item Vertraulichkeit
+  \item Integrität
+  \item Nichtabstreitbarkeit
+  \item Zurechenbarkeit
+  \item Authentizität
+\end{itemize}
+\end{block}
 }
 
 \frame{
-	\frametitle{Hauptqualitätsmerkmale von Software}
-	\begin{block}{Wartbarkeit}
-		\begin{itemize}
-			\item Wie anpassungsfähig ist das System in Hinblick auf Fehlerkorrektur oder Veränderbarkeit als Reaktion auf dessen Umwelt oder sich wandelnde Rahmenbedingungen? 
-			\item Ist die Software modular aufgebaut?
-			\item Besteht sie aus wiederverwendbaren Komponenten?
-			\item Ist sie leicht modifizierbar?
-		\end{itemize}
-	\end{block}
+\frametitle{Hauptqualitätsmerkmale von Software}
+\begin{block}{Wartbarkeit}
+\begin{itemize}
+  \item Modularität 
+  \item Wiederverwendbarkeit
+  \item Analysierbarkeit
+  \item Modifizierbarkeit
+  \item Testbarkeit
+\end{itemize}
+\end{block}
 }
 
 \frame{
-	\frametitle{Hauptqualitätsmerkmale von Software}
-	\begin{block}{Übertragbarkeit}
-		\begin{itemize}
-			\item Wie übertragbar ist die Software? 
-			\item Kann die Software von einer Umgebung in eine andere übertragen werden?
-			\item Ist sie leicht zu installieren?
-			\item Ist sie leicht austauschbar?
-		\end{itemize}
-	\end{block}
+\frametitle{Hauptqualitätsmerkmale von Software}
+\begin{block}{Übertragbarkeit}
+\begin{itemize}
+  \item Anpassbarkeit
+  \item Installierbarkeit
+  \item Austauschbarkeit
+\end{itemize}
+\end{block}
 }
 
 \subsection{Rule of Ten}
@@ -230,6 +228,7 @@ Bestätigung durch Bereitstellung eines objektiven Nachweises, dass die Anforder
   \input{rule-of-10.tikz}
 \end{center}
 \end{frame}
+
 
 \section{Testen}
 
@@ -313,13 +312,13 @@ Prozess, der sämtliche Testaktivitäten umfasst, welche den Zielen dienen
 \frame{
 \frametitle{Allgemeine Prinzipien des Softwaretestens}
 \begin{itemize}
-  \item Testen zeigt Anwesenheit von Fehlern, nicht die Abwesenheit von Fehlerzuständen
-  \item Vollständiges Testen ist nicht möglich
-  \item Frühes Testen spart Geld und Zeit
-  \item Fehlerzustände treten gehäuft auf
-  \item Tests nutzen sich ab (Testresistenz)
-  \item Testen ist abhängig vom Umfeld
-  \item Trugschluss: Keine Fehler bedeuten ein brauchbares System
+	\item Testen zeigt Anwesenheit von Fehlern, nicht die Abwesenheit von Fehlerzuständen
+	\item Vollständiges Testen ist unmöglich
+	\item Frühes Testen spart Geld und Zeit
+	\item Fehlerzustände treten gehäuft auf
+	\item Tests nutzen sich ab (Testresistenz)
+	\item Testen ist kontextabhängig
+	\item Trugschluss: Keine Fehler bedeuten ein brauchbares System
 \end{itemize}
 }
 
@@ -359,7 +358,7 @@ Prozess, der sämtliche Testaktivitäten umfasst, welche den Zielen dienen
 \node (Fehlhandlung) at (0,0)  [rectangle, fill=LightOrange,   text width=3cm, minimum height=1em, text centered, rounded corners=8pt] {Fehlhandlung};
 \node at (5.75,0) [text width=7cm,fill=ivory, rounded corners=8pt] {Nutzer teilt 5 durch 0};
 \node (Fehlerzustand) at (0,-1.75)  [rectangle, fill=LightOrange,   text width=3cm, minimum height=4em, text centered, rounded corners=8pt] {Fehlerzustand};
-\node at (5.75,-1.75) [text width=7cm,fill=ivory, rounded corners=8pt] {int divident = 5;\\int divisor = 0;\\double result = dividend / divisor;};
+\node at (5.75,-1.75) [text width=7cm,fill=ivory, rounded corners=8pt] {int dividend = 5;\\int divisor = 0;\\double result = dividend / divisor;};
 \node (Fehlerwirkung) at (0,-3.5)  [rectangle, fill=LightOrange,   text width=3cm, minimum height=1em, text centered, rounded corners=8pt] {Fehlerwirkung};
 \node at (5.75,-3.5) [text width=7cm,fill=ivory, rounded corners=8pt] {java.lang.ArithmeticException: / by zero};
 \node (Schaden) at (0,-4.75)  [rectangle, fill=LightOrange,   text width=3cm, minimum height=1em, text centered, rounded corners=8pt] {Schaden};
@@ -389,13 +388,13 @@ Prozess, der sämtliche Testaktivitäten umfasst, welche den Zielen dienen
 \frametitle{Debugging}
 \begin{block}{Definition}
 \begin{itemize}
-  \item Prozess der Aufdeckung, Analyse und Entfernung der Ursache von Fehlerwirkungen in einer Komponente oder einem Fehler
-  \item Typischer Debugging-Prozess:
-    \begin{itemize}
-	  \item Reproduzieren einer Fehlerwirkung
-	  \item Diagnose (Befund einer Grundursache)
-	  \item Behebung der Ursache
-    \end{itemize}
+	\item Prozess der Aufdeckung, Analyse und Entfernung der Ursache von Fehlerwirkungen in einer Komponente oder einem Fehler
+	\item Typischer Debugging-Prozess:
+	\begin{itemize}
+		\item Reproduzieren einer Fehlerwirkung
+		\item Diagnose (Befund einer Grundursache)
+		\item Behebung der Ursache
+	\end{itemize}
 	\item Debugging erfolgt in der Regel durch den Entwickler
 \end{itemize}
 \end{block}
@@ -404,14 +403,21 @@ Prozess, der sämtliche Testaktivitäten umfasst, welche den Zielen dienen
 \subsection{Testarten}
 
 \frame{
+\frametitle{Testart}
+\begin{block}{Definition}
+Eine Gruppe von Testaktivitäten basierend auf bestimmten Testzielen mit dem Zweck, eine Komponente oder ein System auf spezifische Merkmale zu prüfen.
+\end{block}
+}
+
+\frame{
 \frametitle{Testarten}
 \begin{block}{Testarten}
-  \begin{itemize}
-    \item Funktionaler Test
-    \item Nicht-funktionaler Test
-    \item Black-Box-Test
-    \item White-Box-Test
-  \end{itemize}
+\begin{itemize}
+\item Funktionaler Test
+\item Nicht-funktionaler Test
+\item Black-Box-Test
+\item White-Box-Test
+\end{itemize}
 \end{block}
 }
 
@@ -444,6 +450,27 @@ Ein Test, der auf der Analyse der internen Struktur einer Komponente oder eines 
 }
 
 \subsection{Testverfahren}
+
+\frame{
+\frametitle{Testbedingung}
+\begin{block}{Definition}
+Ein testbarer Aspekt einer Komponente oder eines Systems, der als Grundlage für das Testen identifiziert wurde.
+\end{block}
+}
+
+\frame{
+\frametitle{Testdaten}
+\begin{block}{Definition}
+Für die Testdurchführung benötigte Daten.
+\end{block}
+}
+
+\frame{
+\frametitle{Testverfahren}
+\begin{block}{Definition}
+Eine Vorgehensweise zum Definieren von Testbedingungen, Entwerfen von Testfällen und Spezifizieren von Testdaten.
+\end{block}
+}
 
 \frame{
 \frametitle{Testverfahren}
@@ -486,7 +513,7 @@ Ein Testverfahren, das auf einer Analyse der Spezifikation einer Komponente oder
 \frame{
 \frametitle{Äquivalenzklasse}
 \begin{block}{Definition}
-Teil des Wertebereichs von Ein- oder Ausgaben, in dem ein gleichartiges Verhalten der Komponente oder des Systems angenommen wird, basierend auf der zugrunde liegenden Spezifikation
+Eine Teilmenge des Wertebereichs einer Variablen innerhalb einer Komponente oder eines Systems, für die aufgrund der Spezifikation erwartet wird, dass alle Werte gleichartig behandelt werden.
 \end{block}
 }
 
@@ -507,11 +534,11 @@ Teil des Wertebereichs von Ein- oder Ausgaben, in dem ein gleichartiges Verhalte
 \begin{itemize}
   \item 3 gültige Äquivalenzklassen
   \begin{itemize}
-    \item Zulässige Vertreter der drei Äquivalenzklassen, z.B. 6, 13 und 41.
+    \item Zulässige Vertreter der drei Äquivalenzklassen, z.\,B. 6, 13 und 41.
   \end{itemize}
   \item 1 ungültige Äquivalenzklasse
   \begin{itemize}
-    \item Zulässiger Vertreter der Äquivalenzklasse, z.B. 2.
+    \item Zulässiger Vertreter der Äquivalenzklasse, z.\,B. 2.
   \end{itemize}
 \end{itemize}
 \begin{center}
@@ -541,7 +568,7 @@ Teil des Wertebereichs von Ein- oder Ausgaben, in dem ein gleichartiges Verhalte
 \frame{
 \frametitle{Grenzwertanalyse}
 \begin{block}{Definition}
- Stellt sicher, dass Fehler in kritischen Grenzbereichen der Äquivalenzklassen gefunden werden.
+Ein Black-Box-Testverfahren, bei dem die Testfälle unter Nutzung von Grenzwerten entworfen werden.
 \end{block}
 }
 
@@ -580,14 +607,14 @@ Teil des Wertebereichs von Ein- oder Ausgaben, in dem ein gleichartiges Verhalte
 }
 
 \frame{
-\frametitle{Entscheidungstabellen}
+\frametitle{Entscheidungstabellentest}
 \begin{block}{Definition}
-Entscheidungstabellen werden eingesetzt, um komplexe Abhängigkeiten zwischen mehreren Bedingungen und den jeweils auszuführenden Aktionen übersichtlich, vollständig und widerspruchsfrei darzustellen.
+Ein Black-Box-Testverfahren, bei dem Testfälle im Hinblick auf die Ausführung von Kombinationen der Bedingungen und aus ihnen resultierender Aktionen einer Entscheidungstabelle entworfen werden.
 \end{block}
 }
 
 \frame{
-\frametitle{Beispiel: Entscheidungstabellen}
+\frametitle{Beispiel: Entscheidungstabellentest}
 \begin{block}{Vollständige Entscheidungstabelle}
 \begin{tabular}{|p{5cm}|l|l|l|l|l|l|l|l|}
 \hline
@@ -609,7 +636,7 @@ D Mitteilen: nicht lieferbar &   &   &   &   & X & X & X & X\\ \hline
 }
 
 \frame{
-\frametitle{Beispiel: Entscheidungstabellen}
+\frametitle{Beispiel: Entscheidungstabellentest}
 \begin{block}{Reduzierte Entscheidungstabelle}
 \begin{tabular}{|p{5cm}|l|l|l|l|}
 \hline
@@ -631,14 +658,14 @@ D Mitteilen: nicht lieferbar &   &   &   & X \\ \hline
 }
 
 \frame{
-\frametitle{Zustandsbasierte Verfahren}
+\frametitle{Zustandsübergangstest}
 \begin{block}{Definition}
-Testverfahren, bei der Tests aus einer in Form eines Zustandsautomaten vorliegenden Spezifikation abgeleitet werden.
+Ein Black-Box-Testverfahren, bei dem Testfälle entworfen werden, um Elemente eines Zustandsübergangsmodells auszuführen.
 \end{block}
 }
 
 \frame{
-\frametitle{Beispiel: Zustandsbasierte Verfahren}
+\frametitle{Beispiel: Zustandsübergangstest}
 \begin{center}
 \begin{tikzpicture}[scale=.95,transform shape]
 \node (S1) at (0,2) [rectangle, fill=LightOrange, text width=4cm, minimum height=1em, text centered, rounded corners=8pt] {TV Off (S1)};
@@ -674,9 +701,9 @@ Endzustand & S2 & S1 & S3 & S2 & S1\\ \hline
 }
 
 \frame{
-\frametitle{Anwendungsfallbasierte Verfahren}
+\frametitle{Anwendungsfall-Test}
 \begin{block}{Definition}
-Testverfahren, bei dem Testfälle im Hinblick auf die Ausführung verschiedener Verhalten eines Anwendungsfalls entworfen werden.
+Ein Black-Box-Testverfahren, bei dem Testfälle entworfen werden im Hinblick auf die Ausführung verschiedener Verhalten eines Anwendungsfalls.
 \end{block}
 }
 
@@ -704,7 +731,7 @@ Ein Testverfahren, das nur auf der inneren Struktur einer Komponente oder eines 
 \begin{itemize}
   \item Jede Anweisung wird mindestens einmal getestet
   \item Deckt nicht erreichbare Anweisungen (dead code) im Quelltext auf
-  \item Bei Verzweigungen (z.B. Schleifen, Bedingungen) werden Datenabhängigkeiten nicht beachtet
+  \item Bei Verzweigungen (z.\,B. Schleifen, Bedingungen) werden Datenabhängigkeiten nicht beachtet
 \end{itemize}
 \end{block}
 }
@@ -847,9 +874,9 @@ Vier Testfälle sind notwendig:
   \item Definition von Testfällen, die nur schwer durch systematische Testverfahren abgeleitet werden können
   \item Beispiele
    \begin{itemize}
-      \item Intuitive Testfallermittlung
-      \item Explorativer Test
-      \item Checklistenbasierter Test
+    \item Intuitive Testfallermittlung
+	\item Explorativer Test
+	\item Checklistenbasierter Test
   \end{itemize}
 \end{itemize}
 }
@@ -951,6 +978,13 @@ Vier Testfälle sind notwendig:
 \section{Teststufen}
 
 \frame{
+\frametitle{Teststufe}
+\begin{block}{Definition}
+Eine spezifische Instanziierung eines Testprozesses.
+\end{block}
+}
+
+\frame{
 \frametitle{Teststufen}
 \begin{block}{Teststufen}
 \begin{itemize}
@@ -1015,13 +1049,21 @@ Vier Testfälle sind notwendig:
 \scriptsize{Quelle: \href{https://upload.wikimedia.org/wikipedia/commons/9/9c/Eigenschaften_der_Teststufen_II.png}{\url{https://upload.wikimedia.org/wikipedia/commons/9/9c/Eigenschaften_der_Teststufen_II.png}}}
 \end{frame}
 
-
 \section{Literaturverzeichnis}
 
 \frame{
 \frametitle{Literaturverzeichnis}
 \begin{thebibliography}{10}
   \bibitem{ATB} Austrian Testing Board, German Testing Board e. V. \& Swiss Testing Board: \emph{ISTQB Certified Tester -- Lehrplan Foundation Level}. Version 4.0.1a, \href{https://www.austriantestingboard.at/wp-content/uploads/2023/09/ISTQB_CTFL_Lehrplan-2023_V4.0.1a_DE.pdf}{\url{https://www.austriantestingboard.at/wp-content/uploads/2023/09/ISTQB_CTFL_Lehrplan-2023_V4.0.1a_DE.pdf}}, 16. August 2023
+  \bibitem{GTB} German Testing Board e. V.: \emph{ISTQB Certified Tester --  	Lehrplan Advanced Level Technical Test Analyst}. Version 4.0 DE, \href{https://www.gtb.de/wp-content/uploads/2023/10/CTAL-TTA_v4.0_DE_-Advanced-Syllabus-1.pdf}{\url{https://www.gtb.de/wp-content/uploads/2023/10/CTAL-TTA_v4.0_DE_-Advanced-Syllabus-1.pdf}}, 5. Januar 2022
+\end{thebibliography} 
+}
+
+\frame{
+\frametitle{Literaturverzeichnis}
+\begin{thebibliography}{10}
+  \bibitem{GLO} ISTQB: \emph{Glossar}, \href{https://glossary.istqb.org/de_DE/}{\url{https://glossary.istqb.org/de_DE/}}, 16. Oktober 2024
+  \bibitem{MSCH} Maud Schlich: \emph{Softwaretesten nach ISTQB CTFL 4.0 für Dummies}, 1. Auflage 2024, Wiley-VCH GmbH
 \end{thebibliography} 
 }
 
